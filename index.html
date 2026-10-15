@@ -45,7 +45,7 @@
 .ema-card p{position:relative;font-family:'Noto Serif JP',serif;font-size:16px;line-height:1.6;overflow-wrap:anywhere;margin:0 0 12px;color:#433328;white-space:pre-wrap;max-width:100%}
 .ema-card small{position:relative;margin-top:auto;font:12px 'DM Sans',sans-serif;color:#765c47}
 .ema-card[data-design="sakura"] .ema-art:before,.ema-card[data-design="sakura"] .ema-art:after{content:'✿';position:absolute;color:#d8799a;font-size:23px;opacity:.75}.ema-card[data-design="sakura"] .ema-art:before{left:8%;top:4px}.ema-card[data-design="sakura"] .ema-art:after{right:8%;bottom:0;font-size:18px}
-.ema-empty{grid-column:1/-1;padding:26px;text-align:center;border:1px dashed #d9c5b5;border-radius:13px;color:var(--muted);background:#fffaf5}.ema-hidden{display:none!important}.ema-submit:disabled{opacity:.6;cursor:wait}@media(max-width:700px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ema-card{min-height:205px;padding:22px 14px}.ema-card p{font-size:14px}}@media(max-width:430px){.ema-board{grid-template-columns:1fr}.ema-card{min-height:165px}}
+.ema-empty{grid-column:1/-1;padding:26px;text-align:center;border:1px dashed #d9c5b5;border-radius:13px;color:var(--muted);background:#fffaf5}.ema-hidden{display:none!important}.ema-submit:disabled{opacity:.6;cursor:wait}@media(max-width:700px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ema-card{min-height:205px;padding:22px 14px}.ema-card p{font-size:14px}}@media(max-width:430px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ema-card{min-height:190px;padding:20px 9px}.ema-card p{font-size:13px;line-height:1.5}.ema-card:before{font-size:19px;letter-spacing:2px;margin-bottom:8px}.ema-card small{font-size:11px}}
 
 </style>
 </head>
@@ -72,6 +72,8 @@
 
 
 
+<section class="omikuji" id="omikuji"><div class="omikuji-wrap"><div class="omikuji-copy"><div class="jp-label">おみくじ · Omikuji</div><h2>Draw your<br>little fortune ✨</h2><div class="underbar"></div><p>Ready for a little Japanese tradition? Draw an <em>omikuji</em> — a fortune slip often found at Japanese shrines — and discover a playful message for your day.</p><p>Take a breath, make a wish, and see what good vibes are waiting for you at FBAT 2026.</p><span class="omikuji-tag">運試し · Try your luck</span></div><div class="omikuji-stage"><div class="omikuji-cup" id="omikujiCup" aria-hidden="true">おみくじ</div><p class="hint" id="omikujiHint">Your fortune is waiting inside…</p><div class="omikuji-actions"><button class="btn primary" id="drawOmikuji" type="button">✦ Draw Omikuji</button><button class="btn secondary" id="shareFortune" type="button" hidden>↗ Share fortune</button></div><div class="omikuji-result" id="omikujiResult" aria-live="polite" aria-atomic="true"><div class="fortune-jp" id="fortuneJp">吉</div><div class="fortune-level" id="fortuneLevel">Good Fortune</div><p class="fortune-message" id="fortuneMessage"></p><div class="fortune-tip" id="fortuneTip"></div></div><div class="omikuji-note">For fun and inspiration — your future is yours to shape 🌸</div></div></div></section>
+
 <section class="ema-section" id="ema">
   <div class="ema-wrap">
     <div class="section-heading"><div class="jp-label">絵馬 · Ema</div><h2>Leave a wish on our virtual ema wall</h2><p>Write a wish for your future, studies, friendships, or someone you care about. Share a wish with the community. Please keep it kind and respectful.</p></div>
@@ -91,8 +93,6 @@
     <div class="ema-board" id="emaBoard" aria-live="polite"><div class="ema-empty">The community wish board will appear here once the database is connected.</div></div>
   </div>
 </section>
-
-<section class="omikuji" id="omikuji"><div class="omikuji-wrap"><div class="omikuji-copy"><div class="jp-label">おみくじ · Omikuji</div><h2>Draw your<br>little fortune ✨</h2><div class="underbar"></div><p>Ready for a little Japanese tradition? Draw an <em>omikuji</em> — a fortune slip often found at Japanese shrines — and discover a playful message for your day.</p><p>Take a breath, make a wish, and see what good vibes are waiting for you at FBAT 2026.</p><span class="omikuji-tag">運試し · Try your luck</span></div><div class="omikuji-stage"><div class="omikuji-cup" id="omikujiCup" aria-hidden="true">おみくじ</div><p class="hint" id="omikujiHint">Your fortune is waiting inside…</p><div class="omikuji-actions"><button class="btn primary" id="drawOmikuji" type="button">✦ Draw Omikuji</button><button class="btn secondary" id="shareFortune" type="button" hidden>↗ Share fortune</button></div><div class="omikuji-result" id="omikujiResult" aria-live="polite" aria-atomic="true"><div class="fortune-jp" id="fortuneJp">吉</div><div class="fortune-level" id="fortuneLevel">Good Fortune</div><p class="fortune-message" id="fortuneMessage"></p><div class="fortune-tip" id="fortuneTip"></div></div><div class="omikuji-note">For fun and inspiration — your future is yours to shape 🌸</div></div></div></section>
 
 
 </main>
