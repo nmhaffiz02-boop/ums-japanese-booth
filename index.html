@@ -43,7 +43,7 @@
 .ema-art{width:100%;height:88px;flex:0 0 88px;margin:-4px 0 3px;position:relative;z-index:-1;display:grid;place-items:center}
 .ema-art svg{width:100%;height:100%;overflow:visible}
 .ema-card:before{content:'絵馬';display:block;font-family:'Noto Serif JP',serif;font-size:21px;color:currentColor;letter-spacing:4px;margin-bottom:3px}
-.ema-card p{position:relative;font-family:'Noto Serif JP',serif;font-size:16px;line-height:1.6;overflow-wrap:anywhere;margin:0 0 12px;color:#433328;white-space:normal;max-width:100%;width:100%;flex:1 1 auto;min-height:0;display:block;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#c99aaa transparent;text-overflow:clip}.ema-card p::-webkit-scrollbar{width:4px}.ema-card p::-webkit-scrollbar-thumb{background:#c99aaa;border-radius:8px}.ema-card p::-webkit-scrollbar-track{background:transparent}
+.ema-card p{position:relative;font-family:'Noto Serif JP',serif;font-size:16px;line-height:1.6;overflow-wrap:anywhere;margin:0 0 12px;color:#433328;white-space:normal;max-width:100%;width:100%;flex:1 1 auto;min-height:0;display:block;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:auto;overscroll-behavior-x:none;touch-action:pan-y;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#c99aaa transparent;text-overflow:clip}.ema-card p::-webkit-scrollbar{width:4px}.ema-card p::-webkit-scrollbar-thumb{background:#c99aaa;border-radius:8px}.ema-card p::-webkit-scrollbar-track{background:transparent}
 .ema-card small{position:relative;margin-top:auto;font:12px 'DM Sans',sans-serif;color:#765c47}
 .ema-card[data-design="sakura"] .ema-art:before,.ema-card[data-design="sakura"] .ema-art:after{content:'✿';position:absolute;color:#d8799a;font-size:23px;opacity:.75}.ema-card[data-design="sakura"] .ema-art:before{left:8%;top:4px}.ema-card[data-design="sakura"] .ema-art:after{right:8%;bottom:0;font-size:18px}
 .ema-empty{grid-column:1/-1;padding:26px;text-align:center;border:1px dashed #d9c5b5;border-radius:13px;color:var(--muted);background:#fffaf5}.ema-hidden{display:none!important}.ema-submit:disabled{opacity:.6;cursor:wait}@media(max-width:700px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ema-card{height:270px;padding:22px 14px}.ema-card p{font-size:14px}}@media(max-width:430px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ema-card{height:250px;padding:20px 9px}.ema-card p{font-size:13px;line-height:1.5}.ema-card:before{font-size:19px;letter-spacing:2px;margin-bottom:8px}.ema-card small{font-size:11px}}
@@ -74,12 +74,12 @@
   .ema-card{height:250px!important;min-height:0!important;padding:14px 10px 16px!important;border-radius:12px}
   .ema-card .ema-art{height:54px;margin-bottom:5px}
   .ema-card .ema-art svg{max-height:54px}
-  .ema-card p{font-size:13px!important;line-height:1.45!important;overflow-wrap:anywhere;margin:8px 0;display:block!important;overflow-y:auto!important;-webkit-line-clamp:unset!important;-webkit-box-orient:initial!important;flex:1 1 auto;min-height:0}
+  .ema-card p{font-size:13px!important;line-height:1.45!important;overflow-wrap:anywhere;margin:8px 0;display:block!important;overflow-y:auto!important;overscroll-behavior-y:auto!important;touch-action:pan-y!important;-webkit-overflow-scrolling:touch!important;-webkit-line-clamp:unset!important;-webkit-box-orient:initial!important;flex:1 1 auto;min-height:0}
   .ema-card small{font-size:10px!important;line-height:1.35;overflow-wrap:anywhere}
   .ema-board-heading{margin-top:28px}
   .floating-fortune{right:12px;bottom:max(14px,env(safe-area-inset-bottom));min-height:52px;padding:0 16px}
 }
-@media(max-width:360px){.floating-fortune{font-size:13px;padding:0 13px}.ema-card{height:235px!important;padding:12px 8px 14px!important}.ema-card p{font-size:12px!important;display:block!important;overflow-y:auto!important;-webkit-line-clamp:unset!important;-webkit-box-orient:initial!important}}
+@media(max-width:360px){.floating-fortune{font-size:13px;padding:0 13px}.ema-card{height:235px!important;padding:12px 8px 14px!important}.ema-card p{font-size:12px!important;display:block!important;overflow-y:auto!important;overscroll-behavior-y:auto!important;touch-action:pan-y!important;-webkit-overflow-scrolling:touch!important;-webkit-line-clamp:unset!important;-webkit-box-orient:initial!important}}
 @media(prefers-reduced-motion:reduce){.floating-fortune{transition:none}}
 
 
