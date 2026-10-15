@@ -98,7 +98,7 @@
 .omikuji-category{display:grid;grid-template-columns:minmax(86px,.42fr) 1fr;gap:12px;padding:12px 0;border-bottom:1px solid #efdfd8;align-items:start}
 .omikuji-category strong{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#b90e18;padding-right:10px;border-right:1px solid #dba6a0;line-height:1.6}
 .omikuji-category span{font:14px/1.6 'Noto Serif JP',serif}
-.omikuji-modal-footer{text-align:center;font-size:12px;color:#796c65;margin:22px 0 18px;line-height:1.6}
+.omikuji-modal-footer{text-align:center;font-size:12px;color:#796c65;margin:22px 0 18px;line-height:1.6}.share-cta{display:block;color:#b90e18;margin-top:9px;font-size:13px}
 .omikuji-modal-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.omikuji-modal-actions button{min-height:48px;min-width:150px;cursor:pointer}
 .omikuji-modal-actions .modal-close-btn{background:#b90e18;color:#fff;border:1px solid #b90e18;border-radius:9px;padding:12px 20px;font-weight:700}.omikuji-modal-actions .modal-save-btn{background:#fffdf9;color:#b90e18;border:1px solid #b90e18;border-radius:9px;padding:12px 20px;font-weight:700}.omikuji-modal-actions button:disabled{opacity:.65;cursor:wait}
 body.omikuji-modal-open{overflow:hidden}
@@ -132,7 +132,7 @@ body.omikuji-modal-open{overflow:hidden}
 
 
 
-<section class="omikuji" id="omikuji"><div class="omikuji-wrap"><div class="omikuji-copy"><div class="jp-label">おみくじ · Omikuji</div><h2>Draw your<br>little fortune ✨</h2><div class="underbar"></div><p>Ready for a little Japanese tradition? Draw an <em>omikuji</em> — a fortune slip often found at Japanese shrines — and discover a playful message for your day.</p><p>Take a breath, make a wish, and see what good vibes are waiting for you at FBAT 2026.</p><span class="omikuji-tag">運試し · Try your luck</span></div><div class="omikuji-stage"><div class="omikuji-cup" id="omikujiCup" aria-hidden="true">おみくじ</div><p class="hint" id="omikujiHint">Your fortune is waiting inside…</p><div class="omikuji-actions"><button class="btn primary" id="drawOmikuji" type="button">✦ Draw Omikuji</button><button class="btn secondary" id="shareFortune" type="button" hidden>↓ Save as Image</button></div><div class="omikuji-result" id="omikujiResult" aria-live="polite" aria-atomic="true"><div class="fortune-jp" id="fortuneJp">吉</div><div class="fortune-level" id="fortuneLevel">Good Fortune</div><p class="fortune-message" id="fortuneMessage"></p><div class="fortune-tip" id="fortuneTip"></div></div><div class="omikuji-note">For fun and inspiration — your future is yours to shape 🌸</div></div></div></section>
+<section class="omikuji" id="omikuji"><div class="omikuji-wrap"><div class="omikuji-copy"><div class="jp-label">おみくじ · Omikuji</div><h2>Draw your<br>little fortune ✨</h2><div class="underbar"></div><p>Ready for a little Japanese tradition? Draw an <em>omikuji</em> — a fortune slip often found at Japanese shrines — and discover a playful message for your day.</p><p>Take a breath, make a wish, and see what good vibes are waiting for you at FBAT 2026.</p><span class="omikuji-tag">運試し · Try your luck</span></div><div class="omikuji-stage"><div class="omikuji-cup" id="omikujiCup" aria-hidden="true">おみくじ</div><p class="hint" id="omikujiHint">Your fortune is waiting inside…</p><div class="omikuji-actions"><button class="btn primary" id="drawOmikuji" type="button">✦ Draw Omikuji</button><button class="btn secondary" id="shareFortune" type="button" hidden>↗ Share Fortune</button></div><div class="omikuji-result" id="omikujiResult" aria-live="polite" aria-atomic="true"><div class="fortune-jp" id="fortuneJp">吉</div><div class="fortune-level" id="fortuneLevel">Good Fortune</div><p class="fortune-message" id="fortuneMessage"></p><div class="fortune-tip" id="fortuneTip"></div></div><div class="omikuji-note">For fun and inspiration — your future is yours to shape 🌸</div></div></div></section>
 
 <section class="ema-section" id="ema">
   <div class="ema-wrap">
@@ -170,9 +170,9 @@ body.omikuji-modal-open{overflow:hidden}
     <p class="omikuji-modal-message" id="modalFortuneMessage"></p>
     <div class="omikuji-modal-divider" aria-hidden="true">❀</div>
     <div class="omikuji-category-list" id="omikujiCategories"></div>
-    <p class="omikuji-modal-footer">This fortune is for fun and inspiration. Keep a grateful heart, and make your own good fortune.</p>
+    <p class="omikuji-modal-footer">This fortune is for fun and inspiration. Keep a grateful heart, and make your own good fortune.<br><strong class="share-cta">Visit the Japanese Booth at FBAT 2026 to draw your own omikuji! 🌸</strong></p>
     <div class="omikuji-modal-actions">
-      <button class="modal-save-btn" id="saveFortuneImageModal" type="button">↓ &nbsp; Save as Image</button>
+      <button class="modal-save-btn" id="saveFortuneImageModal" type="button">↗ &nbsp; Share Fortune</button>
       <button class="modal-close-btn" id="closeOmikujiModalBottom" type="button">× &nbsp; Close</button>
     </div>
   </div>
@@ -238,25 +238,37 @@ function openFortuneModal(f){document.getElementById('modalFortuneJp').textConte
 function drawFortune(){if(drawBtn.disabled)return;let index;do{index=Math.floor(Math.random()*fortunes.length)}while(fortunes.length>1&&index===lastFortune);lastFortune=index;const base=fortunes[index];const f={...base,categories:makeCategories(index)};window.currentFortune=f;drawBtn.disabled=true;drawBtn.setAttribute('aria-busy','true');drawBtn.textContent='Shaking your fortune…';hint.textContent='Drawing your fortune…';cup.classList.remove('shake');void cup.offsetWidth;cup.classList.add('shake');result.classList.remove('show');shareFortune.hidden=true;window.setTimeout(()=>{document.getElementById('fortuneJp').textContent=f.jp;document.getElementById('fortuneLevel').textContent=f.level;document.getElementById('fortuneMessage').textContent=f.message;document.getElementById('fortuneTip').textContent=f.tip;result.classList.add('show');hint.textContent='Your omikuji has been revealed! 🌸';drawBtn.disabled=false;drawBtn.removeAttribute('aria-busy');drawBtn.textContent='↻ Draw Again';shareFortune.hidden=false;cup.textContent=f.jp;openFortuneModal(f);},550);}
 drawBtn.addEventListener('click',drawFortune);closeOmikujiModal.addEventListener('click',closeFortuneModal);closeOmikujiModalBottom.addEventListener('click',closeFortuneModal);omikujiModal.addEventListener('click',event=>{if(event.target===omikujiModal)closeFortuneModal();});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&omikujiModal.classList.contains('open'))closeFortuneModal();});
 const saveFortuneImageModal=document.getElementById('saveFortuneImageModal');
-async function saveFortuneAsImage(){
+async function shareFortuneAsImage(){
   if(!window.currentFortune){toast.textContent='Draw a fortune first.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400);return;}
-  if(!window.html2canvas){toast.textContent='Image saving could not load. Please check your internet connection and try again.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3500);return;}
+  if(!window.html2canvas){toast.textContent='Sharing needs the image tool. Please check your internet connection and try again.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3500);return;}
   const panel=document.querySelector('.omikuji-modal-panel');
   const closeTop=document.getElementById('closeOmikujiModal');
   const actions=document.querySelector('.omikuji-modal-actions');
   const old={maxHeight:panel.style.maxHeight,overflow:panel.style.overflow,height:panel.style.height,closeDisplay:closeTop.style.display,actionsDisplay:actions.style.display,scrollTop:panel.scrollTop};
   const buttons=[shareFortune,saveFortuneImageModal];buttons.forEach(b=>{if(b){b.disabled=true;if(b===saveFortuneImageModal)b.textContent='Preparing image…';else b.textContent='Preparing image…';}});
-  toast.textContent='Preparing your fortune image…';toast.classList.add('show');
+  toast.textContent='Preparing your fortune to share…';toast.classList.add('show');
   try{
     panel.style.maxHeight='none';panel.style.overflow='visible';panel.style.height='auto';panel.scrollTop=0;closeTop.style.display='none';actions.style.display='none';
     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
     const canvas=await window.html2canvas(panel,{scale:Math.min(2,Math.max(1,window.devicePixelRatio||1)),backgroundColor:'#fffdf9',useCORS:true,logging:false,windowWidth:Math.max(document.documentElement.clientWidth,panel.scrollWidth),onclone:(doc)=>{const clonedPanel=doc.querySelector('.omikuji-modal-panel');if(clonedPanel){clonedPanel.style.maxHeight='none';clonedPanel.style.overflow='visible';clonedPanel.style.height='auto';}const c=doc.getElementById('closeOmikujiModal');if(c)c.style.display='none';const a=doc.querySelector('.omikuji-modal-actions');if(a)a.style.display='none';}});
-    const link=document.createElement('a');const f=window.currentFortune;link.download='omikuji-'+f.level.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.png';link.href=canvas.toDataURL('image/png');link.click();
-    toast.textContent='Fortune image saved! 🌸';
+    const f=window.currentFortune;
+    const filename='omikuji-'+f.level.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.png';
+    const blob=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('Could not create image')), 'image/png'));
+    const file=new File([blob],filename,{type:'image/png'});
+    const shareText=`I drew ${f.level} (${f.jp})! 🌸\n\nVisit the Japanese Booth at FBAT 2026 to draw your own omikuji and write an ema!`;
+    if(navigator.share && navigator.canShare && navigator.canShare({files:[file]})){
+      await navigator.share({files:[file],title:'My Omikuji Fortune',text:shareText});
+      toast.textContent='Share sheet opened! Choose WhatsApp or another app. 🌸';
+    }else{
+      const link=document.createElement('a');link.download=filename;link.href=URL.createObjectURL(blob);link.click();setTimeout(()=>URL.revokeObjectURL(link.href),15000);
+      const whatsappUrl='https://wa.me/?text='+encodeURIComponent(shareText+'\n\nI saved my fortune image—attach it to this message before sending!');
+      toast.textContent='Fortune image downloaded. Opening WhatsApp so you can attach it.';
+      window.setTimeout(()=>window.open(whatsappUrl,'_blank','noopener'),450);
+    }
   }catch(error){console.error('Could not save Omikuji image:',error);toast.textContent='Could not save the image. Please try again.';}
-  finally{panel.style.maxHeight=old.maxHeight;panel.style.overflow=old.overflow;panel.style.height=old.height;panel.scrollTop=old.scrollTop;closeTop.style.display=old.closeDisplay;actions.style.display=old.actionsDisplay;buttons.forEach(b=>{if(b){b.disabled=false;if(b===saveFortuneImageModal)b.innerHTML='↓ &nbsp; Save as Image';else b.innerHTML='↓ Save as Image';}});setTimeout(()=>toast.classList.remove('show'),3200);}
+  finally{panel.style.maxHeight=old.maxHeight;panel.style.overflow=old.overflow;panel.style.height=old.height;panel.scrollTop=old.scrollTop;closeTop.style.display=old.closeDisplay;actions.style.display=old.actionsDisplay;buttons.forEach(b=>{if(b){b.disabled=false;if(b===saveFortuneImageModal)b.innerHTML='↗ &nbsp; Share Fortune';else b.innerHTML='↗ Share Fortune';}});setTimeout(()=>toast.classList.remove('show'),3200);}
 }
-shareFortune.addEventListener('click',saveFortuneAsImage);saveFortuneImageModal.addEventListener('click',saveFortuneAsImage);
+shareFortune.addEventListener('click',shareFortuneAsImage);saveFortuneImageModal.addEventListener('click',shareFortuneAsImage);
 
 
 // Virtual ema wall. Add your Supabase project URL and publishable/anon key after completing SETUP-EMA.md.
