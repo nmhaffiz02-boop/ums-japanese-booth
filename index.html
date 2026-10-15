@@ -47,6 +47,65 @@
 .ema-card[data-design="sakura"] .ema-art:before,.ema-card[data-design="sakura"] .ema-art:after{content:'✿';position:absolute;color:#d8799a;font-size:23px;opacity:.75}.ema-card[data-design="sakura"] .ema-art:before{left:8%;top:4px}.ema-card[data-design="sakura"] .ema-art:after{right:8%;bottom:0;font-size:18px}
 .ema-empty{grid-column:1/-1;padding:26px;text-align:center;border:1px dashed #d9c5b5;border-radius:13px;color:var(--muted);background:#fffaf5}.ema-hidden{display:none!important}.ema-submit:disabled{opacity:.6;cursor:wait}@media(max-width:700px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ema-card{min-height:205px;padding:22px 14px}.ema-card p{font-size:14px}}@media(max-width:430px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ema-card{min-height:190px;padding:20px 9px}.ema-card p{font-size:13px;line-height:1.5}.ema-card:before{font-size:19px;letter-spacing:2px;margin-bottom:8px}.ema-card small{font-size:11px}}
 
+
+/* Mobile-first usability improvements */
+.btn,.nav a,.contact-links a,button,input,select,textarea{touch-action:manipulation}
+.btn{min-height:48px}
+.ema-form input,.ema-form select,.ema-form textarea{font:inherit;min-height:48px}
+.ema-form textarea{min-height:120px}
+.ema-submit{width:100%;min-height:52px}
+.ema-status{padding:12px 14px;border-radius:10px;background:#fff5e9;border:1px solid #ead9c9;line-height:1.55;font-size:14px;margin-top:12px}
+.ema-status[data-state="loading"]{background:#fff7e8;border-color:#e8c77d;color:#74501c}
+.ema-status[data-state="success"]{background:#edf8ef;border-color:#b6dfbf;color:#245c32}
+.ema-status[data-state="error"]{background:#fff0ef;border-color:#e8b4af;color:#8a201d}
+.floating-fortune{position:fixed;right:16px;bottom:18px;z-index:45;display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 18px;border:0;border-radius:999px;background:var(--red);color:#fff;font-weight:700;font-size:14px;box-shadow:0 8px 26px #54101845;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .2s,transform .2s,visibility .2s;cursor:pointer}
+.floating-fortune.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.floating-fortune:focus-visible{outline:3px solid #f0b84d;outline-offset:3px}
+@media(max-width:700px){
+  .omikuji{scroll-margin-top:82px}
+  .omikuji-stage{border-radius:18px}
+  .omikuji-actions{gap:10px}
+  .omikuji-actions .btn{flex:1 1 145px;min-height:50px;padding:13px 14px}
+  .ema-section{padding-left:14px;padding-right:14px}
+  .ema-wrap{width:100%}
+  .ema-form{padding:18px 15px}
+  .ema-board{gap:9px}
+  .ema-card{min-height:0!important;padding:14px 10px 16px!important;border-radius:12px}
+  .ema-card .ema-art{height:54px;margin-bottom:5px}
+  .ema-card .ema-art svg{max-height:54px}
+  .ema-card p{font-size:13px!important;line-height:1.45!important;overflow-wrap:anywhere;margin:8px 0}
+  .ema-card small{font-size:10px!important;line-height:1.35;overflow-wrap:anywhere}
+  .ema-board-heading{margin-top:28px}
+  .floating-fortune{right:12px;bottom:max(14px,env(safe-area-inset-bottom));min-height:52px;padding:0 16px}
+}
+@media(max-width:360px){.floating-fortune{font-size:13px;padding:0 13px}.ema-card{padding:12px 8px 14px!important}.ema-card p{font-size:12px!important}}
+@media(prefers-reduced-motion:reduce){.floating-fortune{transition:none}}
+
+
+/* Omikuji result popup: keeps the booth page visible behind the fortune. */
+.omikuji-modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(24,15,14,.66);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.omikuji-modal.open{display:flex;animation:modalFade .22s ease both}
+.omikuji-modal-panel{position:relative;width:min(760px,100%);max-height:min(88vh,900px);overflow:auto;background:#fffdf9;color:#211c1a;border:4px double #b90e18;box-shadow:0 24px 90px #0005;padding:clamp(22px,4vw,42px);background-image:radial-gradient(#eadfd5 .7px,transparent .7px);background-size:15px 15px}
+.omikuji-modal-panel:before,.omikuji-modal-panel:after{position:absolute;color:#e9a7b2;opacity:.55;font-size:42px;pointer-events:none}.omikuji-modal-panel:before{content:'✿';top:12px;left:15px}.omikuji-modal-panel:after{content:'✿';right:15px;bottom:8px}
+.omikuji-modal-close{position:sticky;top:0;float:right;z-index:2;border:1px solid #e8d4ca;background:#fffaf5;color:#7b211e;border-radius:50%;width:42px;height:42px;font-size:24px;line-height:1;cursor:pointer}
+.omikuji-modal-flower{display:flex;align-items:center;justify-content:center;gap:16px;width:100%;box-sizing:border-box;text-align:center;color:#b90e18;font-size:22px;line-height:1;letter-spacing:0;margin:2px 0 8px}.omikuji-modal-flower:before,.omikuji-modal-flower:after{content:'';display:block;width:28px;height:1px;background:#b90e18;flex:0 0 28px}
+.omikuji-modal-heading{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;text-align:center}
+.omikuji-modal-title{display:block;width:100%;font:700 clamp(32px,6vw,52px)/1.15 'Noto Serif JP',serif;text-align:center;color:#b90e18;margin:8px 0 5px;align-self:stretch}
+.omikuji-modal-level{display:block;width:100%;text-align:center;font:700 clamp(17px,3vw,23px) 'Noto Serif JP',serif;margin:0 0 18px;color:#33231f;align-self:stretch}
+.omikuji-modal-message{text-align:center;max-width:620px;margin:0 auto 22px;font:16px/1.85 'Noto Serif JP',serif;white-space:pre-line}
+.omikuji-modal-divider{display:flex;align-items:center;gap:12px;color:#b90e18;margin:22px 0}.omikuji-modal-divider:before,.omikuji-modal-divider:after{content:'';height:1px;background:#cf6a68;flex:1}
+.omikuji-category-list{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+.omikuji-category{display:grid;grid-template-columns:minmax(86px,.42fr) 1fr;gap:12px;padding:12px 0;border-bottom:1px solid #efdfd8;align-items:start}
+.omikuji-category strong{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#b90e18;padding-right:10px;border-right:1px solid #dba6a0;line-height:1.6}
+.omikuji-category span{font:14px/1.6 'Noto Serif JP',serif}
+.omikuji-modal-footer{text-align:center;font-size:12px;color:#796c65;margin:22px 0 18px;line-height:1.6}
+.omikuji-modal-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.omikuji-modal-actions button{min-height:48px;min-width:150px;cursor:pointer}
+.omikuji-modal-actions .modal-close-btn{background:#b90e18;color:#fff;border:1px solid #b90e18;border-radius:9px;padding:12px 20px;font-weight:700}
+body.omikuji-modal-open{overflow:hidden}
+@keyframes modalFade{from{opacity:0}to{opacity:1}}
+@media(max-width:560px){.omikuji-modal{padding:10px}.omikuji-modal-panel{max-height:92dvh;padding:22px 16px;border-width:3px}.omikuji-modal-panel:before,.omikuji-modal-panel:after{font-size:28px}.omikuji-modal-message{font-size:14px}.omikuji-category-list{grid-template-columns:1fr}.omikuji-category{grid-template-columns:105px 1fr;padding:10px 0}.omikuji-category span{font-size:13px}.omikuji-modal-actions{display:grid;grid-template-columns:1fr}.omikuji-modal-actions button{min-width:0;width:100%;padding:12px 8px}}
+@media(prefers-reduced-motion:reduce){.omikuji-modal.open{animation:none}}
+
 </style>
 </head>
 <body>
@@ -98,6 +157,24 @@
 </main>
 <footer><div><strong>UMS · JAPANESE BOOTH</strong><br>FBAT 2026 · Discover Japan together</div><div>Universiti Malaysia Sabah · Made with ♥ and こんにちは</div><a class="top-link" href="#home">Back to top ↑</a></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button class="floating-fortune" id="floatingFortune" type="button" aria-label="Scroll to Draw Fortune Card">✦ Draw Fortune Card</button>
+<div class="omikuji-modal" id="omikujiModal" role="dialog" aria-modal="true" aria-labelledby="modalFortuneLevel" aria-hidden="true">
+  <div class="omikuji-modal-panel" role="document">
+    <button class="omikuji-modal-close" id="closeOmikujiModal" type="button" aria-label="Close fortune">×</button>
+    <div class="omikuji-modal-flower" aria-hidden="true">✿</div>
+    <div class="omikuji-modal-heading">
+      <div class="omikuji-modal-title" id="modalFortuneJp">吉</div>
+      <h2 class="omikuji-modal-level" id="modalFortuneLevel">Good Fortune</h2>
+    </div>
+    <p class="omikuji-modal-message" id="modalFortuneMessage"></p>
+    <div class="omikuji-modal-divider" aria-hidden="true">❀</div>
+    <div class="omikuji-category-list" id="omikujiCategories"></div>
+    <p class="omikuji-modal-footer">This fortune is for fun and inspiration. Keep a grateful heart, and make your own good fortune.</p>
+    <div class="omikuji-modal-actions">
+      <button class="modal-close-btn" id="closeOmikujiModalBottom" type="button">× &nbsp; Close</button>
+    </div>
+  </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const toast=document.getElementById('toast');
@@ -107,14 +184,57 @@ const siteNav=document.getElementById('siteNav');
 menuBtn.addEventListener('click',()=>{const open=siteNav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu');menuBtn.textContent=open?'×':'☰';});
 siteNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{siteNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.setAttribute('aria-label','Open menu');menuBtn.textContent='☰';}));
 
+const floatingFortune=document.getElementById('floatingFortune'),fortuneSection=document.getElementById('omikuji');
+floatingFortune.addEventListener('click',()=>fortuneSection.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}));
+function updateFloatingFortune(){const sectionRect=fortuneSection.getBoundingClientRect();const fortuneVisible=sectionRect.top<window.innerHeight&&sectionRect.bottom>0;floatingFortune.classList.toggle('visible',window.scrollY>420&&!fortuneVisible);}
+window.addEventListener('scroll',updateFloatingFortune,{passive:true});window.addEventListener('resize',updateFloatingFortune);updateFloatingFortune();
+
 const fortunes=[
-{jp:'大吉',level:'Great Fortune',message:'A bright day is ahead! Say yes to a new experience and let your curiosity lead the way.',tip:'Lucky action: Try something you have never done before.'},
-{jp:'吉',level:'Good Fortune',message:'Good things grow from small moments. A friendly conversation could become a lovely memory.',tip:'Lucky action: Say hello to someone new.'},
-{jp:'中吉',level:'Moderate Fortune',message:'You are finding your rhythm. Keep showing up, stay open-minded, and trust your progress.',tip:'Lucky action: Learn one new Japanese word.'},
-{jp:'小吉',level:'Small Fortune',message:'A little joy is waiting in the details. Slow down, notice the beauty around you, and enjoy the moment.',tip:'Lucky action: Make time for a creative activity.'},
-{jp:'末吉',level:'Future Fortune',message:'Your best chapter may still be unfolding. Be patient with yourself and keep taking small steps forward.',tip:'Lucky action: Make one tiny step toward a goal.'},
-{jp:'吉',level:'Friendship Fortune',message:'Your warmth can make someone’s day. Share a smile, exchange stories, and let a new connection begin.',tip:'Lucky action: Invite a friend to explore the booth.'}
-];let lastFortune=-1;const drawBtn=document.getElementById('drawOmikuji'),cup=document.getElementById('omikujiCup'),result=document.getElementById('omikujiResult'),hint=document.getElementById('omikujiHint'),shareFortune=document.getElementById('shareFortune');drawBtn.addEventListener('click',()=>{let index;do{index=Math.floor(Math.random()*fortunes.length)}while(fortunes.length>1&&index===lastFortune);lastFortune=index;const f=fortunes[index];drawBtn.disabled=true;drawBtn.textContent='Shaking your fortune…';cup.classList.remove('shake');void cup.offsetWidth;cup.classList.add('shake');result.classList.remove('show');shareFortune.hidden=true;hint.textContent='A little moment of suspense…';window.setTimeout(()=>{document.getElementById('fortuneJp').textContent=f.jp;document.getElementById('fortuneLevel').textContent=f.level;document.getElementById('fortuneMessage').textContent=f.message;document.getElementById('fortuneTip').textContent=f.tip;result.classList.add('show');hint.textContent='Your omikuji has been revealed! 🌸';drawBtn.disabled=false;drawBtn.textContent='↻ Draw Again';shareFortune.hidden=false;cup.textContent=f.jp;},650)});shareFortune.addEventListener('click',async()=>{const f=fortunes[lastFortune];const message='My UMS Japanese Booth FBAT 2026 omikuji: '+f.level+' ('+f.jp+') — '+f.message+' '+f.tip;try{if(navigator.share){await navigator.share({title:'My Omikuji Fortune',text:message})}else if(navigator.clipboard){await navigator.clipboard.writeText(message);toast.textContent='Your fortune was copied!';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}else{toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),5000)}}catch(err){if(err.name!=='AbortError'){toast.textContent='Your fortune is ready to share!';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}}});
+{jp:'大吉',level:'Great Fortune',message:'A bright day is ahead. Let curiosity lead you toward new experiences, and welcome the good things that come your way.',tip:'Take a chance on something positive today.'},
+{jp:'吉',level:'Good Fortune',message:'Good things grow from small moments. A friendly conversation or a simple act of kindness could become a lovely memory.',tip:'Say hello to someone new.'},
+{jp:'中吉',level:'Moderate Fortune',message:'You are finding your rhythm. Stay open-minded, trust your progress, and remember that consistency matters more than speed.',tip:'Learn one new Japanese word today.'},
+{jp:'小吉',level:'Small Fortune',message:'A little joy is waiting in the details. Slow down, notice the beauty around you, and enjoy the moment you are in.',tip:'Make time for a creative activity.'},
+{jp:'末吉',level:'Future Fortune',message:'Your best chapter may still be unfolding. Be patient with yourself and keep taking small steps forward; good things can arrive in their own time.',tip:'Take one tiny step toward a goal.'},
+{jp:'凶',level:'Misfortune',message:'Some days ask us to slow down. Do not be discouraged: a careful choice, a kind word, and a little patience can change the shape of your day.',tip:'Pause, breathe, and choose your next step thoughtfully.'}
+];
+const fortuneAdvice={
+'Wish':{
+positive:['Your wish is within reach. Keep your intentions clear and take one practical step.','A hopeful sign may appear soon; stay patient and keep trying.','Good progress comes when you match optimism with action.','Share your wish with someone you trust; support may help it grow.','The timing may surprise you. Stay open to a different route.','A small beginning can lead to the result you hope for.'],
+neutral:['Your wish may take time. Break it into manageable steps.','Be flexible about how your wish comes true.','Keep working quietly; progress may be happening unseen.','Review your plan and give it a little more time.','A modest result can become the start of something better.'],
+careful:['Avoid rushing toward an answer. Check your plan before acting.','Pause and decide which part of your wish matters most.','A delay is not a final answer; try again with a clearer plan.','Do not let frustration make the decision for you.']},
+'Love':{
+positive:['Honesty and kindness can bring a meaningful connection closer.','A warm message or thoughtful gesture may brighten a relationship.','Let your true self show; sincere affection is easy to recognize.','An old connection may become warmer through a simple conversation.','Make room for laughter and shared little moments.'],
+neutral:['Let trust grow naturally instead of forcing a quick answer.','Listen with care; understanding matters more than winning.','A gentle conversation can clear up a small misunderstanding.','Give yourself and others time to express their feelings.'],
+careful:['Choose your words carefully and avoid assuming the worst.','Give everyone a little breathing room before reacting.','Be kind to yourself; your worth is not decided by one reply.']},
+'Travel':{
+positive:['A memorable outing may bring a welcome change of scenery.','A new place or route could lead to a delightful discovery.','Good company can make even a short journey special.','Keep your camera ready for an unexpected lovely moment.'],
+neutral:['Plan the essentials, then leave room for a happy detour.','A simple, nearby outing may be just what you need.','Check the details early so you can enjoy the journey calmly.'],
+careful:['Double-check times, routes, and belongings before leaving.','Allow extra time; a slower journey is better than a rushed one.','Keep your plans simple and be ready to adjust.']},
+'Work & Study':{
+positive:['Your effort can be noticed. Keep showing up and doing your best.','A new idea may help you solve a stubborn problem.','Focused practice will bring satisfying progress.','Ask a question; the answer may open a useful path.'],
+neutral:['Steady practice will help more than a last-minute rush.','Break a large task into smaller, achievable steps.','Review the basics and build your confidence from there.'],
+careful:['Focus on one task at a time and ask for help when needed.','Check your work carefully before submitting or deciding.','Take a short reset if you feel stuck, then begin again.']},
+'Lost Item':{
+positive:['Something you thought was gone may turn up in an unexpected place.','Retrace your steps calmly; a helpful clue may appear.','Check pockets, bags, and familiar surfaces once more.'],
+neutral:['Search methodically, starting with the last place you remember.','Ask someone nearby if they have seen it.','Give yourself time and check one area at a time.'],
+careful:['Avoid searching in a panic; retrace your steps slowly.','Check the practical places first and ask for help if needed.','Make a list of where you have already looked.']},
+'Health':{
+positive:['A little movement and fresh air may lift your spirits.','Keep a balanced routine and enjoy the energy you have.','Small acts of self-care can make today feel brighter.'],
+neutral:['Make room for rest, water, and a comfortable pace.','A regular sleep schedule may help you feel more balanced.','Listen to your body and keep your routine gentle.'],
+careful:['Do not push through tiredness; give yourself time to rest.','Choose calm routines and avoid taking on too much.','If something feels wrong, seek appropriate help rather than ignoring it.']}
+};
+const luckyColors=['Sakura pink','Vermilion red','Indigo blue','Leaf green','Cream white','Wisteria purple','Sky blue','Golden yellow','Peach blossom'];
+const luckyNumbers=['1','2','3','4','5','6','7','8','9'];
+function pickRandom(items){return items[Math.floor(Math.random()*items.length)];}
+function makeCategories(fortuneIndex){const mood=fortuneIndex===0||fortuneIndex===1?'positive':fortuneIndex===2||fortuneIndex===3||fortuneIndex===4?'neutral':'careful';const categories=Object.entries(fortuneAdvice).map(([label,pools])=>[label,pickRandom(pools[mood])]);categories.push(['Lucky Color',pickRandom(luckyColors)],['Lucky Number',pickRandom(luckyNumbers)]);return categories;}
+
+let lastFortune=-1;const drawBtn=document.getElementById('drawOmikuji'),cup=document.getElementById('omikujiCup'),result=document.getElementById('omikujiResult'),hint=document.getElementById('omikujiHint'),shareFortune=document.getElementById('shareFortune');
+const omikujiModal=document.getElementById('omikujiModal'),closeOmikujiModal=document.getElementById('closeOmikujiModal'),closeOmikujiModalBottom=document.getElementById('closeOmikujiModalBottom');
+function closeFortuneModal(){omikujiModal.classList.remove('open');omikujiModal.setAttribute('aria-hidden','true');document.body.classList.remove('omikuji-modal-open');drawBtn.focus();}
+function openFortuneModal(f){document.getElementById('modalFortuneJp').textContent=f.jp;document.getElementById('modalFortuneLevel').textContent=f.level;document.getElementById('modalFortuneMessage').textContent=f.message;const list=document.getElementById('omikujiCategories');list.replaceChildren();f.categories.forEach(([label,text])=>{const row=document.createElement('div');row.className='omikuji-category';const heading=document.createElement('strong');heading.textContent=label;const value=document.createElement('span');value.textContent=text;row.append(heading,value);list.appendChild(row);});omikujiModal.classList.add('open');omikujiModal.setAttribute('aria-hidden','false');document.body.classList.add('omikuji-modal-open');closeOmikujiModal.focus();}
+function drawFortune(){if(drawBtn.disabled)return;let index;do{index=Math.floor(Math.random()*fortunes.length)}while(fortunes.length>1&&index===lastFortune);lastFortune=index;const base=fortunes[index];const f={...base,categories:makeCategories(index)};window.currentFortune=f;drawBtn.disabled=true;drawBtn.setAttribute('aria-busy','true');drawBtn.textContent='Shaking your fortune…';hint.textContent='Drawing your fortune…';cup.classList.remove('shake');void cup.offsetWidth;cup.classList.add('shake');result.classList.remove('show');shareFortune.hidden=true;window.setTimeout(()=>{document.getElementById('fortuneJp').textContent=f.jp;document.getElementById('fortuneLevel').textContent=f.level;document.getElementById('fortuneMessage').textContent=f.message;document.getElementById('fortuneTip').textContent=f.tip;result.classList.add('show');hint.textContent='Your omikuji has been revealed! 🌸';drawBtn.disabled=false;drawBtn.removeAttribute('aria-busy');drawBtn.textContent='↻ Draw Again';shareFortune.hidden=false;cup.textContent=f.jp;openFortuneModal(f);},550);}
+drawBtn.addEventListener('click',drawFortune);closeOmikujiModal.addEventListener('click',closeFortuneModal);closeOmikujiModalBottom.addEventListener('click',closeFortuneModal);omikujiModal.addEventListener('click',event=>{if(event.target===omikujiModal)closeFortuneModal();});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&omikujiModal.classList.contains('open'))closeFortuneModal();});
+shareFortune.addEventListener('click',async()=>{const f=window.currentFortune||fortunes[lastFortune];const message='My UMS Japanese Booth FBAT 2026 omikuji: '+f.level+' ('+f.jp+') — '+f.message+' '+f.tip;try{if(navigator.share){await navigator.share({title:'My Omikuji Fortune',text:message})}else if(navigator.clipboard){await navigator.clipboard.writeText(message);toast.textContent='Your fortune was copied!';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}else{toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),5000)}}catch(err){if(err.name!=='AbortError'){toast.textContent='Your fortune is ready to share!';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}}});
 
 
 // Virtual ema wall. Add your Supabase project URL and publishable/anon key after completing SETUP-EMA.md.
@@ -130,10 +250,10 @@ const emaDesigns={
 };
 emaWish.addEventListener('input',()=>{emaCharCount.textContent=emaWish.value.length+' / 200 characters';});
 function renderEmaBoard(items){emaBoard.replaceChildren();if(!items.length){const empty=document.createElement('div');empty.className='ema-empty';empty.textContent='No wishes yet. Be the first to leave a kind wish!';emaBoard.appendChild(empty);return;}items.forEach(item=>{const design=emaDesigns[item.design]?item.design:'sakura';const card=document.createElement('article');card.className='ema-card';card.dataset.design=design;const art=document.createElement('div');art.className='ema-art';art.setAttribute('aria-hidden','true');art.innerHTML=emaDesigns[design].art;const wish=document.createElement('p');wish.textContent=item.wish;const name=document.createElement('small');name.textContent='— '+(item.display_name||'Anonymous');card.append(art,wish,name);emaBoard.appendChild(card);});}
-async function loadApprovedEma(){if(!emaClient)return;const {data,error}=await emaClient.from('ema_wishes').select('id,wish,display_name,design,created_at').order('created_at',{ascending:false}).limit(60);if(error){emaStatus.textContent='The wish board could not load right now. Please try again later.';return;}renderEmaBoard(data||[]);}
+async function loadApprovedEma(){if(!emaClient)return;const {data,error}=await emaClient.from('ema_wishes').select('id,wish,display_name,design,created_at').order('created_at',{ascending:false}).limit(60);if(error){emaStatus.dataset.state='error';emaStatus.textContent='The wish board could not load right now. Please try again later.';return;}renderEmaBoard(data||[]);}
 if(emaReady){
   emaClient=window.supabase.createClient(EMA_SUPABASE_URL,EMA_SUPABASE_ANON_KEY);
-  emaStatus.textContent='Your wish will appear on the wall immediately. Please be respectful.';
+  emaStatus.dataset.state='success';emaStatus.textContent='Connected! Your wish will appear on the wall immediately. Please be respectful.';
   loadApprovedEma();
   // Live updates: refresh the wall when another device adds or removes a wish.
   // Supabase Realtime must be enabled for this instant path to work.
@@ -146,7 +266,7 @@ if(emaReady){
     if(document.visibilityState==='visible') loadApprovedEma();
   },10000);
 }else{emaSubmit.disabled=true;emaStatus.textContent='Setup required: connect Supabase using the steps in SETUP-EMA.md before accepting public wishes.';}
-emaForm.addEventListener('submit',async(event)=>{event.preventDefault();if(!emaClient){emaStatus.textContent='Submissions are not active yet. The site administrator must finish the database setup first.';return;}const wish=emaWish.value.trim(),display_name=emaName.value.trim().slice(0,30)||'Anonymous',design=emaDesign.value;if(!wish){emaStatus.textContent='Please write a wish first.';return;}if(wish.length>200){emaStatus.textContent='Please keep your wish under 200 characters.';return;}emaSubmit.disabled=true;emaStatus.textContent='Posting your wish…';const {error}=await emaClient.from('ema_wishes').insert({wish,display_name,design,status:'approved'});emaSubmit.disabled=false;if(error){emaStatus.textContent='Sorry, we could not submit your wish. Please try again later.';return;}emaForm.reset();emaCharCount.textContent='0 / 200 characters';emaStatus.textContent='Thank you! Your wish has been added to the wall.';loadApprovedEma();});
+emaForm.addEventListener('submit',async(event)=>{event.preventDefault();if(!emaClient){emaStatus.textContent='Submissions are not active yet. The site administrator must finish the database setup first.';return;}const wish=emaWish.value.trim(),display_name=emaName.value.trim().slice(0,30)||'Anonymous',design=emaDesign.value;if(!wish){emaStatus.textContent='Please write a wish first.';return;}if(wish.length>200){emaStatus.textContent='Please keep your wish under 200 characters.';return;}emaSubmit.disabled=true;emaStatus.dataset.state='loading';emaStatus.textContent='Posting your wish…';const {error}=await emaClient.from('ema_wishes').insert({wish,display_name,design,status:'approved'});emaSubmit.disabled=false;if(error){emaStatus.dataset.state='error';emaStatus.textContent='Sorry, we could not submit your wish. Please try again later.';return;}emaForm.reset();emaCharCount.textContent='0 / 200 characters';emaStatus.dataset.state='success';emaStatus.textContent='Success! Your wish has been added to the wall. 🌸';loadApprovedEma();});
 
 
 </script>
