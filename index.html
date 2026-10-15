@@ -1,4 +1,4 @@
-Fco<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -21,52 +21,6 @@ Fco<!DOCTYPE html>
 @media(max-width:650px){.omikuji{padding:60px 20px}.omikuji-wrap{grid-template-columns:1fr;gap:25px}.omikuji-stage{padding:23px 17px}}
 
 
-/* Japanese kana learning section */
-.kana-section{padding:78px clamp(20px,5.5vw,86px);background:#f8eee6;background-image:radial-gradient(#e9d8cd .7px,transparent .7px)}
-.kana-panel{max-width:1000px;margin:auto;background:#fffdfa;border:1px solid #eadbd1;border-radius:22px;padding:clamp(20px,4vw,38px);box-shadow:0 18px 48px #652a1a0b}
-.kana-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 0 25px}
-.kana-tab{border:1px solid #e3cec3;background:#fff8f2;color:#51403a;border-radius:999px;padding:11px 22px;font:700 14px 'DM Sans',sans-serif;cursor:pointer;transition:.2s}
-.kana-tab[aria-selected="true"]{background:var(--red);border-color:var(--red);color:white;box-shadow:0 7px 18px #b90e1824}
-.kana-intro{text-align:center;color:var(--muted);font-size:14px;line-height:1.7;margin:-7px auto 22px;max-width:600px}
-.kana-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
-.kana-cell{border:1px solid #eee1d8;background:#fffdfa;border-radius:12px;min-height:82px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;color:#2d2522;transition:transform .16s,border-color .16s,background .16s}
-.kana-cell:hover,.kana-cell:focus-visible{transform:translateY(-2px);border-color:#d99a91;background:#fff4ee;outline:none}
-.kana-cell[aria-pressed="true"]{border:2px solid var(--red);background:#fff0eb}
-.kana-char{font:700 29px 'Noto Serif JP',serif;color:var(--red);line-height:1.2}
-.kana-romaji{font-size:12px;color:var(--muted);letter-spacing:.3px}
-.kana-cell.empty{visibility:hidden;pointer-events:none}
-.kana-feedback{margin:20px auto 0;padding:15px 18px;border-radius:13px;background:#fff5ef;border:1px solid #f0ddd3;text-align:center;color:var(--muted);font-size:14px;line-height:1.6;min-height:55px}
-.kana-feedback strong{color:var(--red)}
-.kana-footnote{text-align:center;font-size:11px;color:#93827a;margin:17px 0 0;line-height:1.6}
-@media(max-width:650px){.kana-section{padding:58px 16px}.kana-panel{padding:19px 12px}.kana-grid{gap:6px}.kana-cell{min-height:69px;border-radius:9px}.kana-char{font-size:25px}.kana-romaji{font-size:11px}.kana-tab{padding:10px 17px}}
-
-
-
-/* Kana reading quiz */
-.kana-quiz{padding:78px clamp(20px,5.5vw,86px);background:#fffdf9}
-.quiz-panel{max-width:850px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,38px);box-shadow:0 18px 48px #652a1a0b}
-.quiz-mode-tabs{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:22px}
-.quiz-mode{border:1px solid #e3cec3;background:#fff8f2;color:#51403a;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer}
-.quiz-mode[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:white}
-.quiz-meta{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:13px;margin-bottom:15px}
-.quiz-progress{height:6px;border-radius:99px;background:#f0e5de;overflow:hidden;margin-bottom:22px}
-.quiz-progress span{display:block;height:100%;width:0;background:var(--red);transition:width .2s}
-.quiz-question{text-align:center;border-radius:17px;background:#fff7f1;padding:24px 15px;margin-bottom:20px}
-.quiz-character{font:700 clamp(68px,12vw,96px)/1.2 'Noto Serif JP',serif;color:var(--red)}
-.quiz-prompt{margin-top:7px;color:var(--muted);font-size:14px}
-.quiz-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.quiz-choice{min-height:62px;border:1px solid #e8d8ce;border-radius:13px;background:#fffdfa;font-size:21px;font-weight:700;cursor:pointer;transition:.15s}
-.quiz-choice:hover:not(:disabled),.quiz-choice:focus-visible{border-color:var(--red);background:#fff3ed;outline:2px solid #b90e1822}
-.quiz-choice:disabled{cursor:default}
-.quiz-choice.correct{background:#e9f5e9;border-color:#5c9a63;color:#24652b}
-.quiz-choice.wrong{background:#fff0ef;border-color:#d76a66;color:#a21d1d}
-.quiz-feedback{min-height:52px;margin:16px 0;padding:13px 15px;border-radius:12px;background:#faf5f0;color:var(--muted);text-align:center;line-height:1.55;font-size:14px}
-.quiz-feedback.good{background:#e9f5e9;color:#24652b}.quiz-feedback.bad{background:#fff0ef;color:#a21d1d}
-.quiz-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.quiz-controls .btn{cursor:pointer;border-color:#e5d4ca;color:#51403a;background:white}.quiz-controls .btn:disabled{opacity:.45;cursor:not-allowed}
-.quiz-result{text-align:center;padding:15px 0 4px}.quiz-score{font:700 48px 'Noto Serif JP',serif;color:var(--red);margin:8px 0}.quiz-result p{color:var(--muted);line-height:1.7}
-.quiz-hidden{display:none!important}.quiz-footnote{text-align:center;color:#93827a;font-size:12px;margin:18px 0 0;line-height:1.6}
-@media(max-width:650px){.kana-quiz{padding:58px 16px}.quiz-panel{padding:19px 14px}.quiz-choices{gap:8px}.quiz-choice{min-height:58px}.quiz-mode{padding:10px 13px;font-size:13px}.quiz-meta{font-size:12px}}
-
 /* Main navigation: keep the fortune draw as the primary call to action. */
 .topbar{gap:20px}
 .nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(14px,2.2vw,30px);font-size:14px;white-space:nowrap}
@@ -80,7 +34,18 @@ Fco<!DOCTYPE html>
 
 
 /* Virtual ema wish board */
-.ema-section{padding:82px clamp(20px,5.5vw,86px);background:#f8eee6}.ema-wrap{max-width:1050px;margin:auto}.ema-form{max-width:700px;margin:0 auto 38px;background:#fffdfa;border:1px solid #eadfd5;border-radius:18px;padding:clamp(20px,4vw,34px);box-shadow:0 12px 35px #573d260d}.ema-form label{display:block;font-size:13px;font-weight:700;margin:15px 0 7px}.ema-form input,.ema-form textarea,.ema-form select{width:100%;font:inherit;border:1px solid #e3d4c9;border-radius:10px;padding:12px 13px;background:white;color:var(--ink)}.ema-form textarea{min-height:105px;resize:vertical}.ema-form input:focus,.ema-form textarea:focus,.ema-form select:focus{outline:2px solid #b90e1833;border-color:var(--red)}.ema-form .btn{margin-top:16px;cursor:pointer}.ema-note{font-size:12px;color:var(--muted);line-height:1.6;margin:12px 0 0}.ema-status{min-height:22px;font-size:13px;line-height:1.6;margin-top:12px;color:var(--muted)}.ema-board-heading{text-align:center;margin:35px 0 20px}.ema-board-heading h3{font-family:'Noto Serif JP',serif;font-size:25px;margin:0 0 7px}.ema-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.ema-card{position:relative;min-height:220px;padding:25px 18px 22px;text-align:center;clip-path:polygon(8% 0,92% 0,100% 14%,96% 100%,4% 100%,0 14%);background:#f0d7a8;border:0;filter:drop-shadow(0 5px 5px #4b301a13)}.ema-card:nth-child(3n+2){background:#f1e2c8}.ema-card:nth-child(3n){background:#e9d4b5}.ema-card:before{content:'絵馬';display:block;font-family:'Noto Serif JP',serif;font-size:23px;color:#a73b2e;letter-spacing:4px;margin-bottom:10px}.ema-card p{font-family:'Noto Serif JP',serif;font-size:16px;line-height:1.7;overflow-wrap:anywhere;margin:0 0 14px;color:#433328;white-space:pre-wrap}.ema-card small{font:12px 'DM Sans',sans-serif;color:#765c47}.ema-empty{grid-column:1/-1;padding:26px;text-align:center;border:1px dashed #d9c5b5;border-radius:13px;color:var(--muted);background:#fffaf5}.ema-hidden{display:none!important}.ema-submit:disabled{opacity:.6;cursor:wait}@media(max-width:700px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ema-card{min-height:205px;padding:22px 14px}.ema-card p{font-size:14px}}@media(max-width:430px){.ema-board{grid-template-columns:1fr}.ema-card{min-height:165px}}
+.ema-section{padding:82px clamp(20px,5.5vw,86px);background:#f8eee6}.ema-wrap{max-width:1050px;margin:auto}.ema-form{max-width:700px;margin:0 auto 38px;background:#fffdfa;border:1px solid #eadfd5;border-radius:18px;padding:clamp(20px,4vw,34px);box-shadow:0 12px 35px #573d260d}.ema-form label{display:block;font-size:13px;font-weight:700;margin:15px 0 7px}.ema-form input,.ema-form textarea,.ema-form select{width:100%;font:inherit;border:1px solid #e3d4c9;border-radius:10px;padding:12px 13px;background:white;color:var(--ink)}.ema-form textarea{min-height:105px;resize:vertical}.ema-form input:focus,.ema-form textarea:focus,.ema-form select:focus{outline:2px solid #b90e1833;border-color:var(--red)}.ema-form .btn{margin-top:16px;cursor:pointer}.ema-note{font-size:12px;color:var(--muted);line-height:1.6;margin:12px 0 0}.ema-status{min-height:22px;font-size:13px;line-height:1.6;margin-top:12px;color:var(--muted)}.ema-board-heading{text-align:center;margin:35px 0 20px}.ema-board-heading h3{font-family:'Noto Serif JP',serif;font-size:25px;margin:0 0 7px}.ema-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ema-card{position:relative;isolation:isolate;overflow:hidden;min-height:245px;padding:22px 18px 22px;text-align:center;clip-path:polygon(8% 0,92% 0,100% 14%,96% 100%,4% 100%,0 14%);border:0;filter:drop-shadow(0 5px 5px #4b301a13);display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+.ema-card[data-design="sakura"]{background:linear-gradient(150deg,#fff4f5,#f6d6df 70%,#edc0cf);color:#763b50}
+.ema-card[data-design="fuji"]{background:linear-gradient(180deg,#f4fbff 0%,#d8eaf5 68%,#b4d1e4 100%);color:#31556e}
+.ema-card[data-design="sun"]{background:linear-gradient(155deg,#fff8e9,#f7dfb5 75%,#efc68d);color:#853a2d}
+.ema-art{width:100%;height:88px;flex:0 0 88px;margin:-4px 0 3px;position:relative;z-index:-1;display:grid;place-items:center}
+.ema-art svg{width:100%;height:100%;overflow:visible}
+.ema-card:before{content:'絵馬';display:block;font-family:'Noto Serif JP',serif;font-size:21px;color:currentColor;letter-spacing:4px;margin-bottom:3px}
+.ema-card p{position:relative;font-family:'Noto Serif JP',serif;font-size:16px;line-height:1.6;overflow-wrap:anywhere;margin:0 0 12px;color:#433328;white-space:pre-wrap;max-width:100%}
+.ema-card small{position:relative;margin-top:auto;font:12px 'DM Sans',sans-serif;color:#765c47}
+.ema-card[data-design="sakura"] .ema-art:before,.ema-card[data-design="sakura"] .ema-art:after{content:'✿';position:absolute;color:#d8799a;font-size:23px;opacity:.75}.ema-card[data-design="sakura"] .ema-art:before{left:8%;top:4px}.ema-card[data-design="sakura"] .ema-art:after{right:8%;bottom:0;font-size:18px}
+.ema-empty{grid-column:1/-1;padding:26px;text-align:center;border:1px dashed #d9c5b5;border-radius:13px;color:var(--muted);background:#fffaf5}.ema-hidden{display:none!important}.ema-submit:disabled{opacity:.6;cursor:wait}@media(max-width:700px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ema-card{min-height:205px;padding:22px 14px}.ema-card p{font-size:14px}}@media(max-width:430px){.ema-board{grid-template-columns:1fr}.ema-card{min-height:165px}}
 
 </style>
 </head>
@@ -92,7 +57,6 @@ Fco<!DOCTYPE html>
   <button class="menu-btn" type="button" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
   <nav class="nav" id="siteNav" aria-label="Main navigation">
     <a href="#activities">Activity</a>
-    <a href="#learn-japanese">Learn</a>
     <a href="#ema">Virtual Ema</a>
     <a class="nav-fortune" href="#omikuji"><span aria-hidden="true">✦</span> Draw Fortune Card <span aria-hidden="true">→</span></a>
   </nav>
@@ -103,19 +67,6 @@ Fco<!DOCTYPE html>
 <section class="welcome" id="about"><div class="section-grid"><div><div class="jp-label">ようこそ · Yōkoso</div><h2>Welcome to the<br>UMS Japanese Booth</h2><div class="underbar"></div><p class="welcome-copy">Step into a celebration of Japanese culture hosted by Universiti Malaysia Sabah. From traditional arts to playful hands-on experiences, come curious, try something new, and connect with people who share your interest in Japan.</p></div><div class="feature-grid" id="experience"><article class="feature"><div class="feature-img" style="background-image:url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=700&q=80')"></div><div class="feature-body"><div class="feature-icon">⛩</div><h3>Cultural Discovery</h3><p>Explore Japanese traditions, art, symbols, and everyday culture.</p></div></article><article class="feature"><div class="feature-img" style="background-image:url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=80')"></div><div class="feature-body"><div class="feature-icon">✎</div><h3>Try Something New</h3><p>Get creative with hands-on activities and cultural crafts.</p></div></article><article class="feature"><div class="feature-img" style="background-image:url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80')"></div><div class="feature-body"><div class="feature-icon">♡</div><h3>Meet & Connect</h3><p>Meet fellow visitors and share your curiosity about Japan.</p></div></article></div></div></section>
 <section class="activities" id="activities"><div class="section-heading"><div class="jp-label">体験 · Taiken</div><h2>A little Japan, a lot to discover</h2><p>Make the most of your visit. Here are some ideas for the kind of cultural moments you can look forward to at our booth.</p></div><div class="activity-grid"><article class="activity"><div class="num">01 / CULTURE</div><h3>Japanese Traditions</h3><p>Discover the stories behind familiar customs, symbols, and celebrations.</p></article><article class="activity"><div class="num">02 / CREATE</div><h3>Hands-on Crafts</h3><p>Take a creative break and explore the joy of making something by hand.</p></article><article class="activity"><div class="num">03 / LANGUAGE</div><h3>Words & Writing</h3><p>Get introduced to Japanese words, characters, and expressions.</p></article><article class="activity"><div class="num">04 / COMMUNITY</div><h3>Share the Fun</h3><p>Bring your friends, meet new people, and exchange cultural perspectives.</p></article></div></section>
 
-<section class="kana-section" id="learn-japanese">
-  <div class="section-heading"><div class="jp-label">ひらがな · カタカナ</div><h2>Learn your first Japanese characters</h2><p>Tap any character to see its sound. Start with Hiragana, then switch to Katakana and explore the two basic Japanese writing systems.</p></div>
-  <div class="kana-panel">
-    <div class="kana-tabs" role="tablist" aria-label="Japanese character chart">
-      <button class="kana-tab" id="hiraganaTab" type="button" role="tab" aria-selected="true" aria-controls="kanaGrid" data-script="hiragana">ひらがな Hiragana</button>
-      <button class="kana-tab" id="katakanaTab" type="button" role="tab" aria-selected="false" aria-controls="kanaGrid" data-script="katakana">カタカナ Katakana</button>
-    </div>
-    <p class="kana-intro" id="kanaDescription">Hiragana is commonly used for native Japanese words and grammatical endings.</p>
-    <div class="kana-grid" id="kanaGrid" aria-label="Hiragana characters"></div>
-    <div class="kana-feedback" id="kanaFeedback" aria-live="polite">Choose a character to practise its pronunciation.</div>
-    <p class="kana-footnote">Basic gojūon characters only. Sounds are shown in romaji to help beginners get started.</p>
-  </div>
-</section>
 
 
 
@@ -165,39 +116,6 @@ const fortunes=[
 {jp:'吉',level:'Friendship Fortune',message:'Your warmth can make someone’s day. Share a smile, exchange stories, and let a new connection begin.',tip:'Lucky action: Invite a friend to explore the booth.'}
 ];let lastFortune=-1;const drawBtn=document.getElementById('drawOmikuji'),cup=document.getElementById('omikujiCup'),result=document.getElementById('omikujiResult'),hint=document.getElementById('omikujiHint'),shareFortune=document.getElementById('shareFortune');drawBtn.addEventListener('click',()=>{let index;do{index=Math.floor(Math.random()*fortunes.length)}while(fortunes.length>1&&index===lastFortune);lastFortune=index;const f=fortunes[index];drawBtn.disabled=true;drawBtn.textContent='Shaking your fortune…';cup.classList.remove('shake');void cup.offsetWidth;cup.classList.add('shake');result.classList.remove('show');shareFortune.hidden=true;hint.textContent='A little moment of suspense…';window.setTimeout(()=>{document.getElementById('fortuneJp').textContent=f.jp;document.getElementById('fortuneLevel').textContent=f.level;document.getElementById('fortuneMessage').textContent=f.message;document.getElementById('fortuneTip').textContent=f.tip;result.classList.add('show');hint.textContent='Your omikuji has been revealed! 🌸';drawBtn.disabled=false;drawBtn.textContent='↻ Draw Again';shareFortune.hidden=false;cup.textContent=f.jp;},650)});shareFortune.addEventListener('click',async()=>{const f=fortunes[lastFortune];const message='My UMS Japanese Booth FBAT 2026 omikuji: '+f.level+' ('+f.jp+') — '+f.message+' '+f.tip;try{if(navigator.share){await navigator.share({title:'My Omikuji Fortune',text:message})}else if(navigator.clipboard){await navigator.clipboard.writeText(message);toast.textContent='Your fortune was copied!';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}else{toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),5000)}}catch(err){if(err.name!=='AbortError'){toast.textContent='Your fortune is ready to share!';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}}});
 
-// Interactive Hiragana and Katakana chart
-const kanaSets={
- hiragana:{description:'Hiragana is commonly used for native Japanese words and grammatical endings.',rows:[
- [['あ','a'],['い','i'],['う','u'],['え','e'],['お','o']],
- [['か','ka'],['き','ki'],['く','ku'],['け','ke'],['こ','ko']],
- [['さ','sa'],['し','shi'],['す','su'],['せ','se'],['そ','so']],
- [['た','ta'],['ち','chi'],['つ','tsu'],['て','te'],['と','to']],
- [['な','na'],['に','ni'],['ぬ','nu'],['ね','ne'],['の','no']],
- [['は','ha'],['ひ','hi'],['ふ','fu'],['へ','he'],['ほ','ho']],
- [['ま','ma'],['み','mi'],['む','mu'],['め','me'],['も','mo']],
- [['や','ya'],null,['ゆ','yu'],null,['よ','yo']],
- [['ら','ra'],['り','ri'],['る','ru'],['れ','re'],['ろ','ro']],
- [['わ','wa'],null,null,null,['を','wo']],
- [null,null,['ん','n'],null,null]
- ]},
- katakana:{description:'Katakana is often used for foreign names, loanwords, and emphasis.',rows:[
- [['ア','a'],['イ','i'],['ウ','u'],['エ','e'],['オ','o']],
- [['カ','ka'],['キ','ki'],['ク','ku'],['ケ','ke'],['コ','ko']],
- [['サ','sa'],['シ','shi'],['ス','su'],['セ','se'],['ソ','so']],
- [['タ','ta'],['チ','chi'],['ツ','tsu'],['テ','te'],['ト','to']],
- [['ナ','na'],['ニ','ni'],['ヌ','nu'],['ネ','ne'],['ノ','no']],
- [['ハ','ha'],['ヒ','hi'],['フ','fu'],['ヘ','he'],['ホ','ho']],
- [['マ','ma'],['ミ','mi'],['ム','mu'],['メ','me'],['モ','mo']],
- [['ヤ','ya'],null,['ユ','yu'],null,['ヨ','yo']],
- [['ラ','ra'],['リ','ri'],['ル','ru'],['レ','re'],['ロ','ro']],
- [['ワ','wa'],null,null,null,['ヲ','wo']],
- [null,null,['ン','n'],null,null]
- ]}
-};
-const kanaGrid=document.getElementById('kanaGrid'),kanaFeedback=document.getElementById('kanaFeedback'),kanaDescription=document.getElementById('kanaDescription'),kanaTabs=document.querySelectorAll('.kana-tab');
-function renderKana(script){const set=kanaSets[script];kanaGrid.replaceChildren();kanaGrid.setAttribute('aria-label',script==='hiragana'?'Hiragana characters':'Katakana characters');kanaDescription.textContent=set.description;kanaTabs.forEach(tab=>tab.setAttribute('aria-selected',String(tab.dataset.script===script)));set.rows.forEach(row=>row.forEach(item=>{if(!item){const empty=document.createElement('div');empty.className='kana-cell empty';empty.setAttribute('aria-hidden','true');kanaGrid.appendChild(empty);return;}const [character,romaji]=item;const button=document.createElement('button');button.type='button';button.className='kana-cell';button.setAttribute('aria-pressed','false');button.setAttribute('aria-label',character+', pronounced '+romaji);button.innerHTML='<span class="kana-char"></span><span class="kana-romaji"></span>';button.querySelector('.kana-char').textContent=character;button.querySelector('.kana-romaji').textContent=romaji;button.addEventListener('click',()=>{kanaGrid.querySelectorAll('.kana-cell[aria-pressed="true"]').forEach(el=>el.setAttribute('aria-pressed','false'));button.setAttribute('aria-pressed','true');kanaFeedback.replaceChildren();const strong=document.createElement('strong');strong.textContent=character+' = '+romaji; kanaFeedback.append(strong,document.createTextNode(' — say it aloud and practise the sound!'));});kanaGrid.appendChild(button);}));kanaFeedback.textContent='Choose a character to practise its pronunciation.';}
-kanaTabs.forEach(tab=>tab.addEventListener('click',()=>renderKana(tab.dataset.script)));renderKana('hiragana');
-
 
 // Virtual ema wall. Add your Supabase project URL and publishable/anon key after completing SETUP-EMA.md.
 const EMA_SUPABASE_URL = 'https://gokbrrftkhujdmcomvjd.supabase.co';
@@ -205,9 +123,13 @@ const EMA_SUPABASE_ANON_KEY = 'sb_publishable_IWLcp-nS9Rh7gp7RNWEdmA_Zbrl_Ddb';
 const emaForm=document.getElementById('emaForm'),emaWish=document.getElementById('emaWish'),emaName=document.getElementById('emaName'),emaDesign=document.getElementById('emaDesign'),emaSubmit=document.getElementById('emaSubmit'),emaStatus=document.getElementById('emaStatus'),emaBoard=document.getElementById('emaBoard'),emaCharCount=document.getElementById('emaCharCount');
 const emaReady=window.supabase && EMA_SUPABASE_URL.startsWith('https://') && !EMA_SUPABASE_URL.includes('YOUR_') && EMA_SUPABASE_ANON_KEY && !EMA_SUPABASE_ANON_KEY.includes('YOUR_');
 let emaClient=null;
-const emaDesigns={sakura:{background:'#f0d7a8',label:'Sakura blossoms'},fuji:{background:'#d9e5e9',label:'Mount Fuji'},sun:{background:'#efd0c4',label:'Rising sun'}};
+const emaDesigns={
+ sakura:{label:'Sakura blossoms',art:'<svg viewBox="0 0 240 90" aria-hidden="true"><path d="M16 74 Q76 52 119 19 Q149 2 177 13" fill="none" stroke="#8b9c68" stroke-width="3" stroke-linecap="round"/><path d="M78 49 Q65 29 50 31 M112 26 Q108 10 95 7 M150 17 Q160 34 177 34" fill="none" stroke="#8b9c68" stroke-width="2"/><g fill="#f5a9c0" stroke="#d87599" stroke-width="1"><ellipse cx="51" cy="23" rx="7" ry="11"/><ellipse cx="62" cy="32" rx="7" ry="11" transform="rotate(72 62 32)"/><ellipse cx="51" cy="40" rx="7" ry="11" transform="rotate(144 51 40)"/><ellipse cx="40" cy="32" rx="7" ry="11" transform="rotate(216 40 32)"/><ellipse cx="42" cy="22" rx="7" ry="11" transform="rotate(288 42 22)"/><circle cx="51" cy="31" r="4" fill="#e6b64e" stroke="none"/><ellipse cx="166" cy="12" rx="6" ry="9"/><ellipse cx="176" cy="20" rx="6" ry="9" transform="rotate(72 176 20)"/><ellipse cx="166" cy="28" rx="6" ry="9" transform="rotate(144 166 28)"/><ellipse cx="156" cy="20" rx="6" ry="9" transform="rotate(216 156 20)"/><ellipse cx="157" cy="11" rx="6" ry="9" transform="rotate(288 157 11)"/><circle cx="166" cy="19" r="3.5" fill="#e6b64e" stroke="none"/></g></svg>'},
+ fuji:{label:'Mount Fuji',art:'<svg viewBox="0 0 240 90" aria-hidden="true"><circle cx="190" cy="20" r="13" fill="#f0b8a4" opacity=".9"/><path d="M16 76 L78 31 L98 46 L128 7 L194 76 Z" fill="#779fba"/><path d="M108 31 L128 7 L149 31 L137 26 L129 31 L121 25 Z" fill="#fffdf7"/><path d="M16 76 L78 31 L98 46 L128 7 L194 76" fill="none" stroke="#557e9c" stroke-width="1.5"/><path d="M0 76 Q48 62 92 75 T240 72 L240 90 L0 90 Z" fill="#b7d3e0"/><path d="M18 83 Q55 75 87 82 T155 81 T240 82" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/></svg>'},
+ sun:{label:'Rising sun',art:'<svg viewBox="0 0 240 90" aria-hidden="true"><g stroke="#d85c48" stroke-width="3" stroke-linecap="round" opacity=".78"><path d="M120 3 V14 M120 65 V76 M76 20 L84 28 M156 58 L164 66 M57 43 H69 M171 43 H183 M76 66 L84 58 M156 28 L164 20 M94 8 L98 18 M142 68 L146 78 M66 29 L76 34 M164 53 L174 58 M66 57 L76 52 M164 34 L174 29"/></g><circle cx="120" cy="43" r="28" fill="#c93a31"/><circle cx="120" cy="43" r="21" fill="#db5140"/><path d="M93 50 Q120 39 147 50" fill="none" stroke="#f8c87c" stroke-width="2" opacity=".8"/><path d="M87 76 Q120 65 153 76" fill="none" stroke="#bd7652" stroke-width="2" opacity=".6"/></svg>'}
+};
 emaWish.addEventListener('input',()=>{emaCharCount.textContent=emaWish.value.length+' / 200 characters';});
-function renderEmaBoard(items){emaBoard.replaceChildren();if(!items.length){const empty=document.createElement('div');empty.className='ema-empty';empty.textContent='No wishes yet. Be the first to leave a kind wish!';emaBoard.appendChild(empty);return;}items.forEach(item=>{const card=document.createElement('article');card.className='ema-card';card.style.background=emaDesigns[item.design]?.background||emaDesigns.sakura.background;const wish=document.createElement('p');wish.textContent=item.wish;const name=document.createElement('small');name.textContent='— '+(item.display_name||'Anonymous');card.append(wish,name);emaBoard.appendChild(card);});}
+function renderEmaBoard(items){emaBoard.replaceChildren();if(!items.length){const empty=document.createElement('div');empty.className='ema-empty';empty.textContent='No wishes yet. Be the first to leave a kind wish!';emaBoard.appendChild(empty);return;}items.forEach(item=>{const design=emaDesigns[item.design]?item.design:'sakura';const card=document.createElement('article');card.className='ema-card';card.dataset.design=design;const art=document.createElement('div');art.className='ema-art';art.setAttribute('aria-hidden','true');art.innerHTML=emaDesigns[design].art;const wish=document.createElement('p');wish.textContent=item.wish;const name=document.createElement('small');name.textContent='— '+(item.display_name||'Anonymous');card.append(art,wish,name);emaBoard.appendChild(card);});}
 async function loadApprovedEma(){if(!emaClient)return;const {data,error}=await emaClient.from('ema_wishes').select('id,wish,display_name,design,created_at').order('created_at',{ascending:false}).limit(60);if(error){emaStatus.textContent='The wish board could not load right now. Please try again later.';return;}renderEmaBoard(data||[]);}
 if(emaReady){emaClient=window.supabase.createClient(EMA_SUPABASE_URL,EMA_SUPABASE_ANON_KEY);emaStatus.textContent='Your wish will appear on the wall immediately. Please be respectful.';loadApprovedEma();}else{emaSubmit.disabled=true;emaStatus.textContent='Setup required: connect Supabase using the steps in SETUP-EMA.md before accepting public wishes.';}
 emaForm.addEventListener('submit',async(event)=>{event.preventDefault();if(!emaClient){emaStatus.textContent='Submissions are not active yet. The site administrator must finish the database setup first.';return;}const wish=emaWish.value.trim(),display_name=emaName.value.trim().slice(0,30)||'Anonymous',design=emaDesign.value;if(!wish){emaStatus.textContent='Please write a wish first.';return;}if(wish.length>200){emaStatus.textContent='Please keep your wish under 200 characters.';return;}emaSubmit.disabled=true;emaStatus.textContent='Posting your wish…';const {error}=await emaClient.from('ema_wishes').insert({wish,display_name,design,status:'approved'});emaSubmit.disabled=false;if(error){emaStatus.textContent='Sorry, we could not submit your wish. Please try again later.';return;}emaForm.reset();emaCharCount.textContent='0 / 200 characters';emaStatus.textContent='Thank you! Your wish has been added to the wall.';loadApprovedEma();});
