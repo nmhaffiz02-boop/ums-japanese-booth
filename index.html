@@ -35,17 +35,18 @@
 
 /* Virtual ema wish board */
 .ema-section{padding:82px clamp(20px,5.5vw,86px);background:#f8eee6}.ema-wrap{max-width:1050px;margin:auto}.ema-form{max-width:700px;margin:0 auto 38px;background:#fffdfa;border:1px solid #eadfd5;border-radius:18px;padding:clamp(20px,4vw,34px);box-shadow:0 12px 35px #573d260d}.ema-form label{display:block;font-size:13px;font-weight:700;margin:15px 0 7px}.ema-form input,.ema-form textarea,.ema-form select{width:100%;font:inherit;border:1px solid #e3d4c9;border-radius:10px;padding:12px 13px;background:white;color:var(--ink)}.ema-form textarea{min-height:105px;resize:vertical}.ema-form input:focus,.ema-form textarea:focus,.ema-form select:focus{outline:2px solid #b90e1833;border-color:var(--red)}.ema-form .btn{margin-top:16px;cursor:pointer}.ema-note{font-size:12px;color:var(--muted);line-height:1.6;margin:12px 0 0}.ema-status{min-height:22px;font-size:13px;line-height:1.6;margin-top:12px;color:var(--muted)}.ema-board-heading{text-align:center;margin:35px 0 20px}.ema-board-heading h3{font-family:'Noto Serif JP',serif;font-size:25px;margin:0 0 7px}.ema-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.ema-card{position:relative;isolation:isolate;overflow:hidden;min-height:245px;padding:22px 18px 22px;text-align:center;clip-path:polygon(8% 0,92% 0,100% 14%,96% 100%,4% 100%,0 14%);border:0;filter:drop-shadow(0 5px 5px #4b301a13);display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+.ema-pagination{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:22px auto 0}.ema-page-btn{min-width:42px;min-height:42px;padding:8px 12px;border:1px solid #e2cfc2;border-radius:10px;background:#fffaf5;color:#5b4035;font:inherit;cursor:pointer}.ema-page-btn[aria-current="page"]{background:#b90e18;color:#fff;border-color:#b90e18}.ema-page-btn:disabled{opacity:.4;cursor:not-allowed}.ema-page-info{font-size:12px;color:var(--muted);text-align:center;width:100%;margin-top:3px}
+.ema-card{position:relative;isolation:isolate;overflow:hidden;height:310px;min-height:0;padding:22px 18px 22px;text-align:center;clip-path:polygon(8% 0,92% 0,100% 14%,96% 100%,4% 100%,0 14%);border:0;filter:drop-shadow(0 5px 5px #4b301a13);display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
 .ema-card[data-design="sakura"]{background:linear-gradient(150deg,#fff4f5,#f6d6df 70%,#edc0cf);color:#763b50}
 .ema-card[data-design="fuji"]{background:linear-gradient(180deg,#f4fbff 0%,#d8eaf5 68%,#b4d1e4 100%);color:#31556e}
 .ema-card[data-design="sun"]{background:linear-gradient(155deg,#fff8e9,#f7dfb5 75%,#efc68d);color:#853a2d}
 .ema-art{width:100%;height:88px;flex:0 0 88px;margin:-4px 0 3px;position:relative;z-index:-1;display:grid;place-items:center}
 .ema-art svg{width:100%;height:100%;overflow:visible}
 .ema-card:before{content:'絵馬';display:block;font-family:'Noto Serif JP',serif;font-size:21px;color:currentColor;letter-spacing:4px;margin-bottom:3px}
-.ema-card p{position:relative;font-family:'Noto Serif JP',serif;font-size:16px;line-height:1.6;overflow-wrap:anywhere;margin:0 0 12px;color:#433328;white-space:pre-wrap;max-width:100%}
+.ema-card p{position:relative;font-family:'Noto Serif JP',serif;font-size:16px;line-height:1.6;overflow-wrap:anywhere;margin:0 0 12px;color:#433328;white-space:normal;max-width:100%;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;overflow:hidden;text-overflow:ellipsis}
 .ema-card small{position:relative;margin-top:auto;font:12px 'DM Sans',sans-serif;color:#765c47}
 .ema-card[data-design="sakura"] .ema-art:before,.ema-card[data-design="sakura"] .ema-art:after{content:'✿';position:absolute;color:#d8799a;font-size:23px;opacity:.75}.ema-card[data-design="sakura"] .ema-art:before{left:8%;top:4px}.ema-card[data-design="sakura"] .ema-art:after{right:8%;bottom:0;font-size:18px}
-.ema-empty{grid-column:1/-1;padding:26px;text-align:center;border:1px dashed #d9c5b5;border-radius:13px;color:var(--muted);background:#fffaf5}.ema-hidden{display:none!important}.ema-submit:disabled{opacity:.6;cursor:wait}@media(max-width:700px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ema-card{min-height:205px;padding:22px 14px}.ema-card p{font-size:14px}}@media(max-width:430px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ema-card{min-height:190px;padding:20px 9px}.ema-card p{font-size:13px;line-height:1.5}.ema-card:before{font-size:19px;letter-spacing:2px;margin-bottom:8px}.ema-card small{font-size:11px}}
+.ema-empty{grid-column:1/-1;padding:26px;text-align:center;border:1px dashed #d9c5b5;border-radius:13px;color:var(--muted);background:#fffaf5}.ema-hidden{display:none!important}.ema-submit:disabled{opacity:.6;cursor:wait}@media(max-width:700px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ema-card{height:270px;padding:22px 14px}.ema-card p{font-size:14px;-webkit-line-clamp:5}}@media(max-width:430px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ema-card{height:250px;padding:20px 9px}.ema-card p{font-size:13px;line-height:1.5;-webkit-line-clamp:5}.ema-card:before{font-size:19px;letter-spacing:2px;margin-bottom:8px}.ema-card small{font-size:11px}}
 
 
 /* Mobile-first usability improvements */
@@ -70,15 +71,15 @@
   .ema-wrap{width:100%}
   .ema-form{padding:18px 15px}
   .ema-board{gap:9px}
-  .ema-card{min-height:0!important;padding:14px 10px 16px!important;border-radius:12px}
+  .ema-card{height:250px!important;min-height:0!important;padding:14px 10px 16px!important;border-radius:12px}
   .ema-card .ema-art{height:54px;margin-bottom:5px}
   .ema-card .ema-art svg{max-height:54px}
-  .ema-card p{font-size:13px!important;line-height:1.45!important;overflow-wrap:anywhere;margin:8px 0}
+  .ema-card p{font-size:13px!important;line-height:1.45!important;overflow-wrap:anywhere;margin:8px 0;-webkit-line-clamp:5!important}
   .ema-card small{font-size:10px!important;line-height:1.35;overflow-wrap:anywhere}
   .ema-board-heading{margin-top:28px}
   .floating-fortune{right:12px;bottom:max(14px,env(safe-area-inset-bottom));min-height:52px;padding:0 16px}
 }
-@media(max-width:360px){.floating-fortune{font-size:13px;padding:0 13px}.ema-card{padding:12px 8px 14px!important}.ema-card p{font-size:12px!important}}
+@media(max-width:360px){.floating-fortune{font-size:13px;padding:0 13px}.ema-card{height:235px!important;padding:12px 8px 14px!important}.ema-card p{font-size:12px!important;-webkit-line-clamp:5!important}}
 @media(prefers-reduced-motion:reduce){.floating-fortune{transition:none}}
 
 
@@ -106,6 +107,24 @@ body.omikuji-modal-open{overflow:hidden}
 @media(max-width:560px){.omikuji-modal{padding:8px;align-items:center}.omikuji-modal-panel{width:100%;max-height:94dvh;padding:12px 12px 14px;border-width:2px;box-sizing:border-box}.omikuji-modal-panel:before,.omikuji-modal-panel:after{font-size:23px}.omikuji-modal-panel:before{top:7px;left:8px}.omikuji-modal-panel:after{right:8px;bottom:5px}.omikuji-modal-close{width:34px;height:34px;font-size:21px}.omikuji-modal-flower{font-size:18px;gap:10px;margin:0 0 4px}.omikuji-modal-flower:before,.omikuji-modal-flower:after{width:22px;flex-basis:22px}.omikuji-modal-title{font-size:36px;margin:2px 0 2px;line-height:1.1}.omikuji-modal-level{font-size:18px;margin:0 0 10px}.omikuji-modal-message{font-size:13px;line-height:1.55;margin:0 auto 12px;padding:0 4px}.omikuji-modal-divider{margin:12px 0;gap:8px}.omikuji-category-list{grid-template-columns:1fr;gap:0}.omikuji-category{grid-template-columns:82px minmax(0,1fr);gap:9px;padding:7px 0}.omikuji-category strong{font-size:10px;letter-spacing:.7px;padding-right:7px;line-height:1.4}.omikuji-category span{font-size:12px;line-height:1.4;overflow-wrap:anywhere}.omikuji-modal-footer{font-size:10px;line-height:1.4;margin:12px 0 10px}.omikuji-modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.omikuji-modal-actions button{min-height:42px;min-width:0;width:100%;padding:9px 8px}}
 @media(max-width:380px){.omikuji-modal-panel{padding:10px 9px}.omikuji-category{grid-template-columns:74px minmax(0,1fr);gap:7px}.omikuji-category span{font-size:11px}.omikuji-modal-message{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.omikuji-modal.open{animation:none}}
+
+
+/* Visual Ema design picker */
+.ema-design-native{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.ema-design-picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:10px 0 22px}
+.ema-design-option{appearance:none;display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0;padding:12px 10px 14px;border:2px solid #eadfd5;border-radius:15px;background:#fffdf9;color:#211c1a;cursor:pointer;text-align:center;transition:border-color .18s,background .18s,transform .18s;}
+.ema-design-option:hover{transform:translateY(-2px);border-color:#d98d91}
+.ema-design-option[aria-checked="true"]{border-color:var(--red);background:#fff0f0;box-shadow:0 0 0 2px #b90e1810}
+.ema-design-option:focus-visible{outline:3px solid #e9a64a;outline-offset:3px}
+.ema-design-preview{display:grid;place-items:center;width:100%;height:92px;border-radius:10px;overflow:hidden;background:linear-gradient(145deg,#fff4f3,#f8dfe3)}
+.ema-design-option[data-design="fuji"] .ema-design-preview{background:linear-gradient(145deg,#f4fbff,#d9eaf3)}
+.ema-design-option[data-design="sun"] .ema-design-preview{background:linear-gradient(145deg,#fff8e8,#f6dfb4)}
+.ema-design-preview svg{width:100%;height:100%;max-height:88px}
+.ema-design-name{font-weight:700;font-size:13px;line-height:1.35}
+.ema-design-radio{width:18px;height:18px;border:2px solid #c7b8b0;border-radius:50%;display:grid;place-items:center;flex:none}
+.ema-design-option[aria-checked="true"] .ema-design-radio{border-color:var(--red)}
+.ema-design-option[aria-checked="true"] .ema-design-radio:after{content:"";width:8px;height:8px;border-radius:50%;background:var(--red)}
+@media(max-width:420px){.ema-design-picker{gap:7px}.ema-design-option{padding:9px 6px 11px;gap:8px;border-radius:12px}.ema-design-preview{height:70px}.ema-design-name{font-size:11px}.ema-design-radio{width:16px;height:16px}}
 
 </style>
 </head>
@@ -143,14 +162,16 @@ body.omikuji-modal-open{overflow:hidden}
       <div class="ema-note" id="emaCharCount">0 / 200 characters</div>
       <label for="emaName">Display name (optional)</label>
       <input id="emaName" name="display_name" maxlength="30" placeholder="Anonymous" autocomplete="off" />
-      <label for="emaDesign">Choose your ema design</label>
-      <select id="emaDesign" name="design"><option value="sakura">Sakura blossoms</option><option value="fuji">Mount Fuji</option><option value="sun">Rising sun</option></select>
+      <label id="emaDesignLabel">Choose your ema design</label>
+      <select id="emaDesign" name="design" class="ema-design-native" aria-labelledby="emaDesignLabel"><option value="sakura">Sakura blossoms</option><option value="fuji">Mount Fuji</option><option value="sun">Rising sun</option></select>
+      <div class="ema-design-picker" id="emaDesignPicker" role="radiogroup" aria-labelledby="emaDesignLabel"></div>
       <button class="btn primary ema-submit" id="emaSubmit" type="submit">Add your wish to the wall →</button>
       <p class="ema-note" id="emaPolicy">Please keep wishes kind and respectful. Your wish will appear on the wall immediately. A booth administrator may remove inappropriate posts. Do not include private or sensitive information.</p>
       <div class="ema-status" id="emaStatus" role="status" aria-live="polite">The wish board needs to be connected to its moderation database before submissions can be sent.</div>
     </form>
     <div class="ema-board-heading"><h3>Community wishes</h3><p class="ema-note">Wishes appear immediately. Inappropriate posts may be removed by the booth team.</p></div>
     <div class="ema-board" id="emaBoard" aria-live="polite"><div class="ema-empty">The community wish board will appear here once the database is connected.</div></div>
+    <nav class="ema-pagination" id="emaPagination" aria-label="Ema pages"></nav>
   </div>
 </section>
 
@@ -284,7 +305,8 @@ shareFortune.addEventListener('click',shareFortuneAsImage);saveFortuneImageModal
 // Virtual ema wall. Add your Supabase project URL and publishable/anon key after completing SETUP-EMA.md.
 const EMA_SUPABASE_URL = 'https://gokbrrftkhujdmcomvjd.supabase.co';
 const EMA_SUPABASE_ANON_KEY = 'sb_publishable_IWLcp-nS9Rh7gp7RNWEdmA_Zbrl_Ddb';
-const emaForm=document.getElementById('emaForm'),emaWish=document.getElementById('emaWish'),emaName=document.getElementById('emaName'),emaDesign=document.getElementById('emaDesign'),emaSubmit=document.getElementById('emaSubmit'),emaStatus=document.getElementById('emaStatus'),emaBoard=document.getElementById('emaBoard'),emaCharCount=document.getElementById('emaCharCount');
+const emaForm=document.getElementById('emaForm'),emaWish=document.getElementById('emaWish'),emaName=document.getElementById('emaName'),emaDesign=document.getElementById('emaDesign'),emaSubmit=document.getElementById('emaSubmit'),emaStatus=document.getElementById('emaStatus'),emaBoard=document.getElementById('emaBoard'),emaCharCount=document.getElementById('emaCharCount'),emaPagination=document.getElementById('emaPagination');
+const EMA_MOBILE_PER_PAGE=8,EMA_DESKTOP_PER_PAGE=9;const emaPerPage=()=>window.matchMedia('(max-width: 767px)').matches?EMA_MOBILE_PER_PAGE:EMA_DESKTOP_PER_PAGE;let emaCurrentPage=1,emaTotalCount=0,emaLoadToken=0,emaLastPerPage=emaPerPage();
 const emaReady=window.supabase && EMA_SUPABASE_URL.startsWith('https://') && !EMA_SUPABASE_URL.includes('YOUR_') && EMA_SUPABASE_ANON_KEY && !EMA_SUPABASE_ANON_KEY.includes('YOUR_');
 let emaClient=null;
 const emaDesigns={
@@ -292,13 +314,20 @@ const emaDesigns={
  fuji:{label:'Mount Fuji',art:'<svg viewBox="0 0 240 90" aria-hidden="true"><circle cx="190" cy="20" r="13" fill="#f0b8a4" opacity=".9"/><path d="M16 76 L78 31 L98 46 L128 7 L194 76 Z" fill="#779fba"/><path d="M108 31 L128 7 L149 31 L137 26 L129 31 L121 25 Z" fill="#fffdf7"/><path d="M16 76 L78 31 L98 46 L128 7 L194 76" fill="none" stroke="#557e9c" stroke-width="1.5"/><path d="M0 76 Q48 62 92 75 T240 72 L240 90 L0 90 Z" fill="#b7d3e0"/><path d="M18 83 Q55 75 87 82 T155 81 T240 82" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/></svg>'},
  sun:{label:'Rising sun',art:'<svg viewBox="0 0 240 90" aria-hidden="true"><g stroke="#d85c48" stroke-width="3" stroke-linecap="round" opacity=".78"><path d="M120 3 V14 M120 65 V76 M76 20 L84 28 M156 58 L164 66 M57 43 H69 M171 43 H183 M76 66 L84 58 M156 28 L164 20 M94 8 L98 18 M142 68 L146 78 M66 29 L76 34 M164 53 L174 58 M66 57 L76 52 M164 34 L174 29"/></g><circle cx="120" cy="43" r="28" fill="#c93a31"/><circle cx="120" cy="43" r="21" fill="#db5140"/><path d="M93 50 Q120 39 147 50" fill="none" stroke="#f8c87c" stroke-width="2" opacity=".8"/><path d="M87 76 Q120 65 153 76" fill="none" stroke="#bd7652" stroke-width="2" opacity=".6"/></svg>'}
 };
+const emaDesignPicker=document.getElementById('emaDesignPicker');
+function updateEmaDesignPicker(){emaDesignPicker.querySelectorAll('.ema-design-option').forEach(button=>{const selected=button.dataset.design===emaDesign.value;button.setAttribute('aria-checked',String(selected));button.tabIndex=selected?0:-1;});}
+Object.entries(emaDesigns).forEach(([key,design])=>{const button=document.createElement('button');button.type='button';button.className='ema-design-option';button.dataset.design=key;button.setAttribute('role','radio');button.innerHTML='<span class="ema-design-preview">'+design.art+'</span><span class="ema-design-name">'+design.label+'</span><span class="ema-design-radio" aria-hidden="true"></span>';button.addEventListener('click',()=>{emaDesign.value=key;updateEmaDesignPicker();});button.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key))return;event.preventDefault();const buttons=[...emaDesignPicker.querySelectorAll('.ema-design-option')];const current=buttons.indexOf(button);const direction=['ArrowRight','ArrowDown'].includes(event.key)?1:-1;const next=buttons[(current+direction+buttons.length)%buttons.length];next.click();next.focus();});emaDesignPicker.appendChild(button);});
+updateEmaDesignPicker();
 emaWish.addEventListener('input',()=>{emaCharCount.textContent=emaWish.value.length+' / 200 characters';});
 function renderEmaBoard(items){emaBoard.replaceChildren();if(!items.length){const empty=document.createElement('div');empty.className='ema-empty';empty.textContent='No wishes yet. Be the first to leave a kind wish!';emaBoard.appendChild(empty);return;}items.forEach(item=>{const design=emaDesigns[item.design]?item.design:'sakura';const card=document.createElement('article');card.className='ema-card';card.dataset.design=design;const art=document.createElement('div');art.className='ema-art';art.setAttribute('aria-hidden','true');art.innerHTML=emaDesigns[design].art;const wish=document.createElement('p');wish.textContent=item.wish;const name=document.createElement('small');name.textContent='— '+(item.display_name||'Anonymous');card.append(art,wish,name);emaBoard.appendChild(card);});}
-async function loadApprovedEma(){if(!emaClient)return;const {data,error}=await emaClient.from('ema_wishes').select('id,wish,display_name,design,created_at').order('created_at',{ascending:false}).limit(60);if(error){emaStatus.dataset.state='error';emaStatus.textContent='The wish board could not load right now. Please try again later.';return;}renderEmaBoard(data||[]);}
+function renderEmaPagination(){emaPagination.replaceChildren();const totalPages=Math.max(1,Math.ceil(emaTotalCount/emaPerPage()));if(totalPages<=1){return;}const addButton=(label,page,disabled=false,current=false)=>{const b=document.createElement('button');b.type='button';b.className='ema-page-btn';b.textContent=label;b.disabled=disabled;if(current)b.setAttribute('aria-current','page');b.addEventListener('click',()=>{emaCurrentPage=page;loadApprovedEma();const heading=document.querySelector('.ema-board-heading');if(heading)heading.scrollIntoView({behavior:'smooth',block:'start'});});emaPagination.appendChild(b);};addButton('←',Math.max(1,emaCurrentPage-1),emaCurrentPage===1);let pages=[];if(totalPages<=7){pages=Array.from({length:totalPages},(_,i)=>i+1);}else{pages=[1];if(emaCurrentPage>3)pages.push('…');for(let p=Math.max(2,emaCurrentPage-1);p<=Math.min(totalPages-1,emaCurrentPage+1);p++)pages.push(p);if(emaCurrentPage<totalPages-2)pages.push('…');pages.push(totalPages);}pages.forEach(p=>{if(p==='…'){const span=document.createElement('span');span.textContent='…';span.style.padding='0 3px';emaPagination.appendChild(span);}else addButton(String(p),p,false,p===emaCurrentPage);});addButton('→',Math.min(totalPages,emaCurrentPage+1),emaCurrentPage===totalPages);const info=document.createElement('div');info.className='ema-page-info';info.textContent='Page '+emaCurrentPage+' of '+totalPages+' · '+emaTotalCount+' wishes';emaPagination.appendChild(info);}
+async function loadApprovedEma(goToNewestPage=false){if(!emaClient)return;const token=++emaLoadToken;const {count,error:countError}=await emaClient.from('ema_wishes').select('id',{count:'exact',head:true});if(countError){emaStatus.dataset.state='error';emaStatus.textContent='The wish board could not load right now. Please try again later.';return;}emaTotalCount=count||0;const totalPages=Math.max(1,Math.ceil(emaTotalCount/emaPerPage()));if(goToNewestPage)emaCurrentPage=totalPages;else if(emaCurrentPage>totalPages)emaCurrentPage=totalPages;const perPage=emaPerPage();const start=(emaCurrentPage-1)*perPage;const {data,error}=await emaClient.from('ema_wishes').select('id,wish,display_name,design,created_at').order('created_at',{ascending:true}).range(start,start+perPage-1);if(token!==emaLoadToken)return;if(error){emaStatus.dataset.state='error';emaStatus.textContent='The wish board could not load right now. Please try again later.';return;}renderEmaBoard(data||[]);renderEmaPagination();}
 if(emaReady){
   emaClient=window.supabase.createClient(EMA_SUPABASE_URL,EMA_SUPABASE_ANON_KEY);
   emaStatus.dataset.state='success';emaStatus.textContent='Connected! Your wish will appear on the wall immediately. Please be respectful.';
   loadApprovedEma();
+  // Use 9 wishes per page on desktop and 8 on mobile; reload if the layout crosses the breakpoint.
+  window.addEventListener('resize',()=>{const nextPerPage=emaPerPage();if(nextPerPage!==emaLastPerPage){emaLastPerPage=nextPerPage;loadApprovedEma();}});
   // Live updates: refresh the wall when another device adds or removes a wish.
   // Supabase Realtime must be enabled for this instant path to work.
   emaClient.channel('public-ema-wishes-live')
@@ -310,7 +339,7 @@ if(emaReady){
     if(document.visibilityState==='visible') loadApprovedEma();
   },10000);
 }else{emaSubmit.disabled=true;emaStatus.textContent='Setup required: connect Supabase using the steps in SETUP-EMA.md before accepting public wishes.';}
-emaForm.addEventListener('submit',async(event)=>{event.preventDefault();if(!emaClient){emaStatus.textContent='Submissions are not active yet. The site administrator must finish the database setup first.';return;}const wish=emaWish.value.trim(),display_name=emaName.value.trim().slice(0,30)||'Anonymous',design=emaDesign.value;if(!wish){emaStatus.textContent='Please write a wish first.';return;}if(wish.length>200){emaStatus.textContent='Please keep your wish under 200 characters.';return;}emaSubmit.disabled=true;emaStatus.dataset.state='loading';emaStatus.textContent='Posting your wish…';const {error}=await emaClient.from('ema_wishes').insert({wish,display_name,design,status:'approved'});emaSubmit.disabled=false;if(error){emaStatus.dataset.state='error';emaStatus.textContent='Sorry, we could not submit your wish. Please try again later.';return;}emaForm.reset();emaCharCount.textContent='0 / 200 characters';emaStatus.dataset.state='success';emaStatus.textContent='Success! Your wish has been added to the wall. 🌸';loadApprovedEma();});
+emaForm.addEventListener('submit',async(event)=>{event.preventDefault();if(!emaClient){emaStatus.textContent='Submissions are not active yet. The site administrator must finish the database setup first.';return;}const wish=emaWish.value.trim(),display_name=emaName.value.trim().slice(0,30)||'Anonymous',design=emaDesign.value;if(!wish){emaStatus.textContent='Please write a wish first.';return;}if(wish.length>200){emaStatus.textContent='Please keep your wish under 200 characters.';return;}emaSubmit.disabled=true;emaStatus.dataset.state='loading';emaStatus.textContent='Posting your wish…';const {error}=await emaClient.from('ema_wishes').insert({wish,display_name,design,status:'approved'});emaSubmit.disabled=false;if(error){emaStatus.dataset.state='error';emaStatus.textContent='Sorry, we could not submit your wish. Please try again later.';return;}emaForm.reset();updateEmaDesignPicker();emaCharCount.textContent='0 / 200 characters';emaStatus.dataset.state='success';emaStatus.textContent='Success! Your wish has been added to the wall. 🌸';loadApprovedEma(true);});
 
 
 </script>
