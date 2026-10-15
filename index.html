@@ -41,6 +41,32 @@
 @media(max-width:650px){.kana-section{padding:58px 16px}.kana-panel{padding:19px 12px}.kana-grid{gap:6px}.kana-cell{min-height:69px;border-radius:9px}.kana-char{font-size:25px}.kana-romaji{font-size:11px}.kana-tab{padding:10px 17px}}
 
 
+
+/* Kana reading quiz */
+.kana-quiz{padding:78px clamp(20px,5.5vw,86px);background:#fffdf9}
+.quiz-panel{max-width:850px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,38px);box-shadow:0 18px 48px #652a1a0b}
+.quiz-mode-tabs{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:22px}
+.quiz-mode{border:1px solid #e3cec3;background:#fff8f2;color:#51403a;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer}
+.quiz-mode[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:white}
+.quiz-meta{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:13px;margin-bottom:15px}
+.quiz-progress{height:6px;border-radius:99px;background:#f0e5de;overflow:hidden;margin-bottom:22px}
+.quiz-progress span{display:block;height:100%;width:0;background:var(--red);transition:width .2s}
+.quiz-question{text-align:center;border-radius:17px;background:#fff7f1;padding:24px 15px;margin-bottom:20px}
+.quiz-character{font:700 clamp(68px,12vw,96px)/1.2 'Noto Serif JP',serif;color:var(--red)}
+.quiz-prompt{margin-top:7px;color:var(--muted);font-size:14px}
+.quiz-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.quiz-choice{min-height:62px;border:1px solid #e8d8ce;border-radius:13px;background:#fffdfa;font-size:21px;font-weight:700;cursor:pointer;transition:.15s}
+.quiz-choice:hover:not(:disabled),.quiz-choice:focus-visible{border-color:var(--red);background:#fff3ed;outline:2px solid #b90e1822}
+.quiz-choice:disabled{cursor:default}
+.quiz-choice.correct{background:#e9f5e9;border-color:#5c9a63;color:#24652b}
+.quiz-choice.wrong{background:#fff0ef;border-color:#d76a66;color:#a21d1d}
+.quiz-feedback{min-height:52px;margin:16px 0;padding:13px 15px;border-radius:12px;background:#faf5f0;color:var(--muted);text-align:center;line-height:1.55;font-size:14px}
+.quiz-feedback.good{background:#e9f5e9;color:#24652b}.quiz-feedback.bad{background:#fff0ef;color:#a21d1d}
+.quiz-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.quiz-controls .btn{cursor:pointer;border-color:#e5d4ca;color:#51403a;background:white}.quiz-controls .btn:disabled{opacity:.45;cursor:not-allowed}
+.quiz-result{text-align:center;padding:15px 0 4px}.quiz-score{font:700 48px 'Noto Serif JP',serif;color:var(--red);margin:8px 0}.quiz-result p{color:var(--muted);line-height:1.7}
+.quiz-hidden{display:none!important}.quiz-footnote{text-align:center;color:#93827a;font-size:12px;margin:18px 0 0;line-height:1.6}
+@media(max-width:650px){.kana-quiz{padding:58px 16px}.quiz-panel{padding:19px 14px}.quiz-choices{gap:8px}.quiz-choice{min-height:58px}.quiz-mode{padding:10px 13px;font-size:13px}.quiz-meta{font-size:12px}}
+
 /* Main navigation: keep the fortune draw as the primary call to action. */
 .topbar{gap:20px}
 .nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(14px,2.2vw,30px);font-size:14px;white-space:nowrap}
@@ -51,6 +77,10 @@
 .menu-btn{display:none;border:0;background:transparent;font-size:27px;color:var(--red);cursor:pointer}
 @media(max-width:760px){.topbar{height:75px;padding:0 18px}.menu-btn{display:block;flex:0 0 auto}.nav{display:none;position:absolute;top:74px;left:0;right:0;background:#fffdf9;padding:14px 20px 20px;box-shadow:0 15px 20px #0001;flex-direction:column;align-items:stretch;gap:4px;white-space:normal}.nav.open{display:flex}.nav a{padding:12px 8px;font-size:14px}.nav .nav-fortune{justify-content:center;margin-top:6px;padding:13px 16px}.brand{min-width:0}.seal{width:40px;height:40px;flex-basis:40px}.brand-main{font-size:24px}.brand-sub{font-size:7px}.brand-divider{height:35px;margin:0}.booth-mark{font-size:8px;letter-spacing:.3px}.booth-mark span{font-size:8px}}
 @media(min-width:761px) and (max-width:1000px){.nav{gap:12px;font-size:12px}.nav .nav-fortune{padding:11px 13px}.topbar{padding-left:22px;padding-right:22px}.brand{gap:8px}.brand-divider{margin:0}}
+
+
+/* Virtual ema wish board */
+.ema-section{padding:82px clamp(20px,5.5vw,86px);background:#f8eee6}.ema-wrap{max-width:1050px;margin:auto}.ema-form{max-width:700px;margin:0 auto 38px;background:#fffdfa;border:1px solid #eadfd5;border-radius:18px;padding:clamp(20px,4vw,34px);box-shadow:0 12px 35px #573d260d}.ema-form label{display:block;font-size:13px;font-weight:700;margin:15px 0 7px}.ema-form input,.ema-form textarea,.ema-form select{width:100%;font:inherit;border:1px solid #e3d4c9;border-radius:10px;padding:12px 13px;background:white;color:var(--ink)}.ema-form textarea{min-height:105px;resize:vertical}.ema-form input:focus,.ema-form textarea:focus,.ema-form select:focus{outline:2px solid #b90e1833;border-color:var(--red)}.ema-form .btn{margin-top:16px;cursor:pointer}.ema-note{font-size:12px;color:var(--muted);line-height:1.6;margin:12px 0 0}.ema-status{min-height:22px;font-size:13px;line-height:1.6;margin-top:12px;color:var(--muted)}.ema-board-heading{text-align:center;margin:35px 0 20px}.ema-board-heading h3{font-family:'Noto Serif JP',serif;font-size:25px;margin:0 0 7px}.ema-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.ema-card{position:relative;min-height:220px;padding:25px 18px 22px;text-align:center;clip-path:polygon(8% 0,92% 0,100% 14%,96% 100%,4% 100%,0 14%);background:#f0d7a8;border:0;filter:drop-shadow(0 5px 5px #4b301a13)}.ema-card:nth-child(3n+2){background:#f1e2c8}.ema-card:nth-child(3n){background:#e9d4b5}.ema-card:before{content:'絵馬';display:block;font-family:'Noto Serif JP',serif;font-size:23px;color:#a73b2e;letter-spacing:4px;margin-bottom:10px}.ema-card p{font-family:'Noto Serif JP',serif;font-size:16px;line-height:1.7;overflow-wrap:anywhere;margin:0 0 14px;color:#433328;white-space:pre-wrap}.ema-card small{font:12px 'DM Sans',sans-serif;color:#765c47}.ema-empty{grid-column:1/-1;padding:26px;text-align:center;border:1px dashed #d9c5b5;border-radius:13px;color:var(--muted);background:#fffaf5}.ema-hidden{display:none!important}.ema-submit:disabled{opacity:.6;cursor:wait}@media(max-width:700px){.ema-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ema-card{min-height:205px;padding:22px 14px}.ema-card p{font-size:14px}}@media(max-width:430px){.ema-board{grid-template-columns:1fr}.ema-card{min-height:165px}}
 
 </style>
 </head>
@@ -63,6 +93,7 @@
   <nav class="nav" id="siteNav" aria-label="Main navigation">
     <a href="#activities">Activity</a>
     <a href="#learn-japanese">Learn</a>
+    <a href="#ema">Virtual Ema</a>
     <a class="nav-fortune" href="#omikuji"><span aria-hidden="true">✦</span> Draw Fortune Card <span aria-hidden="true">→</span></a>
   </nav>
 </header>
@@ -86,12 +117,37 @@
   </div>
 </section>
 
+
+
+
+
+<section class="ema-section" id="ema">
+  <div class="ema-wrap">
+    <div class="section-heading"><div class="jp-label">絵馬 · Ema</div><h2>Leave a wish on our virtual ema wall</h2><p>Write a wish for your future, studies, friendships, or someone you care about. Share a wish with the community. Please keep it kind and respectful.</p></div>
+    <form class="ema-form" id="emaForm">
+      <label for="emaWish">Your wish <span aria-hidden="true">*</span></label>
+      <textarea id="emaWish" name="wish" maxlength="200" required placeholder="May I do my best in my studies…" aria-describedby="emaCharCount emaPolicy"></textarea>
+      <div class="ema-note" id="emaCharCount">0 / 200 characters</div>
+      <label for="emaName">Display name (optional)</label>
+      <input id="emaName" name="display_name" maxlength="30" placeholder="Anonymous" autocomplete="off" />
+      <label for="emaDesign">Choose your ema design</label>
+      <select id="emaDesign" name="design"><option value="sakura">Sakura blossoms</option><option value="fuji">Mount Fuji</option><option value="sun">Rising sun</option></select>
+      <button class="btn primary ema-submit" id="emaSubmit" type="submit">Add your wish to the wall →</button>
+      <p class="ema-note" id="emaPolicy">Please keep wishes kind and respectful. Your wish will appear on the wall immediately. A booth administrator may remove inappropriate posts. Do not include private or sensitive information.</p>
+      <div class="ema-status" id="emaStatus" role="status" aria-live="polite">The wish board needs to be connected to its moderation database before submissions can be sent.</div>
+    </form>
+    <div class="ema-board-heading"><h3>Community wishes</h3><p class="ema-note">Wishes appear immediately. Inappropriate posts may be removed by the booth team.</p></div>
+    <div class="ema-board" id="emaBoard" aria-live="polite"><div class="ema-empty">The community wish board will appear here once the database is connected.</div></div>
+  </div>
+</section>
+
 <section class="omikuji" id="omikuji"><div class="omikuji-wrap"><div class="omikuji-copy"><div class="jp-label">おみくじ · Omikuji</div><h2>Draw your<br>little fortune ✨</h2><div class="underbar"></div><p>Ready for a little Japanese tradition? Draw an <em>omikuji</em> — a fortune slip often found at Japanese shrines — and discover a playful message for your day.</p><p>Take a breath, make a wish, and see what good vibes are waiting for you at FBAT 2026.</p><span class="omikuji-tag">運試し · Try your luck</span></div><div class="omikuji-stage"><div class="omikuji-cup" id="omikujiCup" aria-hidden="true">おみくじ</div><p class="hint" id="omikujiHint">Your fortune is waiting inside…</p><div class="omikuji-actions"><button class="btn primary" id="drawOmikuji" type="button">✦ Draw Omikuji</button><button class="btn secondary" id="shareFortune" type="button" hidden>↗ Share fortune</button></div><div class="omikuji-result" id="omikujiResult" aria-live="polite" aria-atomic="true"><div class="fortune-jp" id="fortuneJp">吉</div><div class="fortune-level" id="fortuneLevel">Good Fortune</div><p class="fortune-message" id="fortuneMessage"></p><div class="fortune-tip" id="fortuneTip"></div></div><div class="omikuji-note">For fun and inspiration — your future is yours to shape 🌸</div></div></div></section>
 
 
 </main>
 <footer><div><strong>UMS · JAPANESE BOOTH</strong><br>FBAT 2026 · Discover Japan together</div><div>Universiti Malaysia Sabah · Made with ♥ and こんにちは</div><a class="top-link" href="#home">Back to top ↑</a></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const toast=document.getElementById('toast');
 
@@ -141,6 +197,36 @@ const kanaSets={
 const kanaGrid=document.getElementById('kanaGrid'),kanaFeedback=document.getElementById('kanaFeedback'),kanaDescription=document.getElementById('kanaDescription'),kanaTabs=document.querySelectorAll('.kana-tab');
 function renderKana(script){const set=kanaSets[script];kanaGrid.replaceChildren();kanaGrid.setAttribute('aria-label',script==='hiragana'?'Hiragana characters':'Katakana characters');kanaDescription.textContent=set.description;kanaTabs.forEach(tab=>tab.setAttribute('aria-selected',String(tab.dataset.script===script)));set.rows.forEach(row=>row.forEach(item=>{if(!item){const empty=document.createElement('div');empty.className='kana-cell empty';empty.setAttribute('aria-hidden','true');kanaGrid.appendChild(empty);return;}const [character,romaji]=item;const button=document.createElement('button');button.type='button';button.className='kana-cell';button.setAttribute('aria-pressed','false');button.setAttribute('aria-label',character+', pronounced '+romaji);button.innerHTML='<span class="kana-char"></span><span class="kana-romaji"></span>';button.querySelector('.kana-char').textContent=character;button.querySelector('.kana-romaji').textContent=romaji;button.addEventListener('click',()=>{kanaGrid.querySelectorAll('.kana-cell[aria-pressed="true"]').forEach(el=>el.setAttribute('aria-pressed','false'));button.setAttribute('aria-pressed','true');kanaFeedback.replaceChildren();const strong=document.createElement('strong');strong.textContent=character+' = '+romaji; kanaFeedback.append(strong,document.createTextNode(' — say it aloud and practise the sound!'));});kanaGrid.appendChild(button);}));kanaFeedback.textContent='Choose a character to practise its pronunciation.';}
 kanaTabs.forEach(tab=>tab.addEventListener('click',()=>renderKana(tab.dataset.script)));renderKana('hiragana');
+
+// Three-choice kana reading quiz: show the character, choose its Romaji.
+const quizModeButtons=document.querySelectorAll('[data-quiz-script]');
+const quizGame=document.getElementById('quizGame'),quizResult=document.getElementById('quizResult');
+const quizCharacter=document.getElementById('quizCharacter'),quizChoices=document.getElementById('quizChoices');
+const quizCounter=document.getElementById('quizCounter'),quizScore=document.getElementById('quizScore'),quizProgress=document.getElementById('quizProgress');
+const quizFeedback=document.getElementById('quizFeedback'),quizNext=document.getElementById('quizNext');
+let quizScript='hiragana',quizQuestions=[],quizIndex=0,quizPoints=0,quizAnswered=false;
+function shuffleQuizItems(items){const copy=[...items];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;}
+function getQuizPool(){const scripts=quizScript==='mixed'?['hiragana','katakana']:[quizScript];return scripts.flatMap(script=>kanaSets[script].rows.flat().filter(Boolean).map(([character,romaji])=>({character,romaji,script})));}
+function startKanaQuiz(){const pool=shuffleQuizItems(getQuizPool());quizQuestions=pool.slice(0,10);quizIndex=0;quizPoints=0;quizAnswered=false;quizGame.classList.remove('quiz-hidden');quizResult.classList.add('quiz-hidden');renderKanaQuestion();}
+function renderKanaQuestion(){const q=quizQuestions[quizIndex];quizAnswered=false;quizCharacter.textContent=q.character;quizCounter.textContent='Question '+(quizIndex+1)+' of '+quizQuestions.length;quizScore.textContent='Score: '+quizPoints;quizProgress.style.width=(quizIndex/quizQuestions.length*100)+'%';quizFeedback.className='quiz-feedback';quizFeedback.textContent='Choose one of the three answers.';quizNext.disabled=true;quizNext.textContent=quizIndex===quizQuestions.length-1?'See my score →':'Next question →';const otherReadings=shuffleQuizItems([...new Set(getQuizPool().map(item=>item.romaji).filter(r=>r!==q.romaji))]).slice(0,2);const choices=shuffleQuizItems([q.romaji,...otherReadings]);quizChoices.replaceChildren();choices.forEach(reading=>{const button=document.createElement('button');button.type='button';button.className='quiz-choice';button.textContent=reading;button.addEventListener('click',()=>answerKanaQuestion(button,reading,q));quizChoices.appendChild(button);});}
+function answerKanaQuestion(button,reading,q){if(quizAnswered)return;quizAnswered=true;const correct=reading===q.romaji;if(correct)quizPoints++;quizChoices.querySelectorAll('button').forEach(choice=>{choice.disabled=true;if(choice.textContent===q.romaji)choice.classList.add('correct');});if(!correct)button.classList.add('wrong');quizScore.textContent='Score: '+quizPoints;quizFeedback.className='quiz-feedback '+(correct?'good':'bad');quizFeedback.textContent=correct?'Correct! '+q.character+' is read “'+q.romaji+'”.':'Not quite — '+q.character+' is read “'+q.romaji+'”. Keep practising!';quizNext.disabled=false;quizProgress.style.width=((quizIndex+1)/quizQuestions.length*100)+'%';}
+quizNext.addEventListener('click',()=>{if(!quizAnswered)return;if(quizIndex<quizQuestions.length-1){quizIndex++;renderKanaQuestion();return;}quizGame.classList.add('quiz-hidden');quizResult.classList.remove('quiz-hidden');document.getElementById('quizFinalScore').textContent=quizPoints+' / '+quizQuestions.length;const pct=quizPoints/quizQuestions.length;document.getElementById('quizResultTitle').textContent=pct===1?'Perfect score!':pct>=.7?'Great practice!':pct>=.4?'Nice effort!':'Keep practising!';document.getElementById('quizResultMessage').textContent=pct===1?'すごい！ You got every question right. Try another round to keep your memory sharp.':pct>=.7?'You are building a strong foundation. Review the chart and try again to improve your score.':'Every attempt helps. Visit the character chart above, practise a few sounds, and give it another try.';});
+document.getElementById('quizRetry').addEventListener('click',startKanaQuiz);quizModeButtons.forEach(button=>button.addEventListener('click',()=>{quizScript=button.dataset.quizScript;quizModeButtons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));startKanaQuiz();}));startKanaQuiz();
+
+
+// Virtual ema wall. Add your Supabase project URL and publishable/anon key after completing SETUP-EMA.md.
+const EMA_SUPABASE_URL = 'https://gokbrrftkhujdmcomvjd.supabase.co';
+const EMA_SUPABASE_ANON_KEY = 'sb_publishable_IWLcp-nS9Rh7gp7RNWEdmA_Zbrl_Ddb';
+const emaForm=document.getElementById('emaForm'),emaWish=document.getElementById('emaWish'),emaName=document.getElementById('emaName'),emaDesign=document.getElementById('emaDesign'),emaSubmit=document.getElementById('emaSubmit'),emaStatus=document.getElementById('emaStatus'),emaBoard=document.getElementById('emaBoard'),emaCharCount=document.getElementById('emaCharCount');
+const emaReady=window.supabase && EMA_SUPABASE_URL.startsWith('https://') && !EMA_SUPABASE_URL.includes('YOUR_') && EMA_SUPABASE_ANON_KEY && !EMA_SUPABASE_ANON_KEY.includes('YOUR_');
+let emaClient=null;
+const emaDesigns={sakura:{background:'#f0d7a8',label:'Sakura blossoms'},fuji:{background:'#d9e5e9',label:'Mount Fuji'},sun:{background:'#efd0c4',label:'Rising sun'}};
+emaWish.addEventListener('input',()=>{emaCharCount.textContent=emaWish.value.length+' / 200 characters';});
+function renderEmaBoard(items){emaBoard.replaceChildren();if(!items.length){const empty=document.createElement('div');empty.className='ema-empty';empty.textContent='No wishes yet. Be the first to leave a kind wish!';emaBoard.appendChild(empty);return;}items.forEach(item=>{const card=document.createElement('article');card.className='ema-card';card.style.background=emaDesigns[item.design]?.background||emaDesigns.sakura.background;const wish=document.createElement('p');wish.textContent=item.wish;const name=document.createElement('small');name.textContent='— '+(item.display_name||'Anonymous');card.append(wish,name);emaBoard.appendChild(card);});}
+async function loadApprovedEma(){if(!emaClient)return;const {data,error}=await emaClient.from('ema_wishes').select('id,wish,display_name,design,created_at').order('created_at',{ascending:false}).limit(60);if(error){emaStatus.textContent='The wish board could not load right now. Please try again later.';return;}renderEmaBoard(data||[]);}
+if(emaReady){emaClient=window.supabase.createClient(EMA_SUPABASE_URL,EMA_SUPABASE_ANON_KEY);emaStatus.textContent='Your wish will appear on the wall immediately. Please be respectful.';loadApprovedEma();}else{emaSubmit.disabled=true;emaStatus.textContent='Setup required: connect Supabase using the steps in SETUP-EMA.md before accepting public wishes.';}
+emaForm.addEventListener('submit',async(event)=>{event.preventDefault();if(!emaClient){emaStatus.textContent='Submissions are not active yet. The site administrator must finish the database setup first.';return;}const wish=emaWish.value.trim(),display_name=emaName.value.trim().slice(0,30)||'Anonymous',design=emaDesign.value;if(!wish){emaStatus.textContent='Please write a wish first.';return;}if(wish.length>200){emaStatus.textContent='Please keep your wish under 200 characters.';return;}emaSubmit.disabled=true;emaStatus.textContent='Posting your wish…';const {error}=await emaClient.from('ema_wishes').insert({wish,display_name,design,status:'approved'});emaSubmit.disabled=false;if(error){emaStatus.textContent='Sorry, we could not submit your wish. Please try again later.';return;}emaForm.reset();emaCharCount.textContent='0 / 200 characters';emaStatus.textContent='Thank you! Your wish has been added to the wall.';loadApprovedEma();});
+
 
 </script>
 </body>
