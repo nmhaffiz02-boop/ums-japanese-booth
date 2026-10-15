@@ -241,19 +241,29 @@ const saveFortuneImageModal=document.getElementById('saveFortuneImageModal');
 async function shareFortuneAsImage(){
   if(!window.currentFortune){toast.textContent='Draw a fortune first.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400);return;}
   if(!window.html2canvas){toast.textContent='Sharing needs the image tool. Please check your internet connection and try again.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3500);return;}
-  const panel=document.querySelector('.omikuji-modal-panel');
-  const closeTop=document.getElementById('closeOmikujiModal');
-  const actions=document.querySelector('.omikuji-modal-actions');
-  const old={maxHeight:panel.style.maxHeight,overflow:panel.style.overflow,height:panel.style.height,closeDisplay:closeTop.style.display,actionsDisplay:actions.style.display,scrollTop:panel.scrollTop};
-  const buttons=[shareFortune,saveFortuneImageModal];buttons.forEach(b=>{if(b){b.disabled=true;if(b===saveFortuneImageModal)b.textContent='Preparing image…';else b.textContent='Preparing image…';}});
+  const sourcePanel=document.querySelector('.omikuji-modal-panel');
+  const buttons=[shareFortune,saveFortuneImageModal];
+  buttons.forEach(b=>{if(b){b.disabled=true;b.textContent='Preparing image…';}});
   toast.textContent='Preparing your fortune to share…';toast.classList.add('show');
+  let captureHost=null;
   try{
-    panel.style.maxHeight='none';panel.style.overflow='visible';panel.style.height='auto';panel.scrollTop=0;closeTop.style.display='none';actions.style.display='none';
+    // Always capture a fresh, off-screen copy. The popup may be closed when
+    // Share Fortune is pressed on the main page, making the original invisible.
+    const panel=sourcePanel.cloneNode(true);
+    const viewportWidth=Math.max(320,Math.min(window.innerWidth||390,760));
+    const panelWidth=Math.max(280,Math.min(760,viewportWidth-16));
+    captureHost=document.createElement('div');
+    captureHost.setAttribute('aria-hidden','true');
+    captureHost.style.cssText='position:fixed;left:-10000px;top:0;width:'+panelWidth+'px;z-index:-1;pointer-events:none;';
+    panel.style.width='100%';panel.style.maxWidth='none';panel.style.maxHeight='none';panel.style.height='auto';panel.style.overflow='visible';panel.style.boxSizing='border-box';panel.style.margin='0';
+    const closeTop=panel.querySelector('#closeOmikujiModal');if(closeTop)closeTop.style.display='none';
+    const actions=panel.querySelector('.omikuji-modal-actions');if(actions)actions.style.display='none';
+    captureHost.appendChild(panel);document.body.appendChild(captureHost);
     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
-    const canvas=await window.html2canvas(panel,{scale:Math.min(2,Math.max(1,window.devicePixelRatio||1)),backgroundColor:'#fffdf9',useCORS:true,logging:false,windowWidth:Math.max(document.documentElement.clientWidth,panel.scrollWidth),onclone:(doc)=>{const clonedPanel=doc.querySelector('.omikuji-modal-panel');if(clonedPanel){clonedPanel.style.maxHeight='none';clonedPanel.style.overflow='visible';clonedPanel.style.height='auto';}const c=doc.getElementById('closeOmikujiModal');if(c)c.style.display='none';const a=doc.querySelector('.omikuji-modal-actions');if(a)a.style.display='none';}});
+    const canvas=await window.html2canvas(panel,{scale:Math.min(2,Math.max(1,window.devicePixelRatio||1)),backgroundColor:'#fffdf9',useCORS:true,logging:false,windowWidth:Math.max(document.documentElement.clientWidth,panelWidth),scrollX:0,scrollY:0});
     const f=window.currentFortune;
     const filename='omikuji-'+f.level.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.png';
-    const blob=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('Could not create image')), 'image/png'));
+    const blob=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('Could not create image')),'image/png'));
     const file=new File([blob],filename,{type:'image/png'});
     const shareText=`I drew ${f.level} (${f.jp})! 🌸\n\nVisit the Japanese Booth at FBAT 2026 to draw your own omikuji and write an ema!`;
     if(navigator.share && navigator.canShare && navigator.canShare({files:[file]})){
@@ -265,8 +275,8 @@ async function shareFortuneAsImage(){
       toast.textContent='Fortune image downloaded. Opening WhatsApp so you can attach it.';
       window.setTimeout(()=>window.open(whatsappUrl,'_blank','noopener'),450);
     }
-  }catch(error){console.error('Could not save Omikuji image:',error);toast.textContent='Could not save the image. Please try again.';}
-  finally{panel.style.maxHeight=old.maxHeight;panel.style.overflow=old.overflow;panel.style.height=old.height;panel.scrollTop=old.scrollTop;closeTop.style.display=old.closeDisplay;actions.style.display=old.actionsDisplay;buttons.forEach(b=>{if(b){b.disabled=false;if(b===saveFortuneImageModal)b.innerHTML='↗ &nbsp; Share Fortune';else b.innerHTML='↗ Share Fortune';}});setTimeout(()=>toast.classList.remove('show'),3200);}
+  }catch(error){console.error('Could not share Omikuji image:',error);toast.textContent='Could not create the fortune image. Please check your connection and try again.';}
+  finally{if(captureHost)captureHost.remove();buttons.forEach(b=>{if(b){b.disabled=false;if(b===saveFortuneImageModal)b.innerHTML='↗ &nbsp; Share Fortune';else b.innerHTML='↗ Share Fortune';}});setTimeout(()=>toast.classList.remove('show'),3200);}
 }
 shareFortune.addEventListener('click',shareFortuneAsImage);saveFortuneImageModal.addEventListener('click',shareFortuneAsImage);
 
